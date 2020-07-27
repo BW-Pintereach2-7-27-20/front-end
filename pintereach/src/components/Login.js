@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { axiosWithAuth } from '../utils/axiosWithAuth';
 
-import styled from 'styled-components'; 
+import styled from 'styled-components';
 
 const StyledDiv = styled.div`
   display: flex;
@@ -11,9 +11,9 @@ const StyledDiv = styled.div`
   height: 80vh;
 
   h2 {
-   width: 40%; 
-   align-self: center;
-   font-size: 3.0rem;
+    width: 40%;
+    align-self: center;
+    font-size: 3rem;
   }
 `;
 
@@ -65,12 +65,8 @@ const Login = (props) => {
   };
 
   return (
-<<<<<<< HEAD
-    <>
-      {localStorage.getItem('token') && props.history.push('/dashboard')}
-=======
     <StyledDiv>
->>>>>>> 0649c8bd02c02059572fcdbafca118b2e6ba9373
+      {localStorage.getItem('token') && props.history.push('/dashboard')}
       <h2>Login here</h2>
       <StyledForm onSubmit={onSubmit}>
         <label htmlFor='username'>Username</label>
