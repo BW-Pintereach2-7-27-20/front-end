@@ -5,13 +5,13 @@ const initialState = {
   description: '',
 };
 
-const postReducer = (initialState, action) => {
+const postReducer = (state = initialState, action) => {
   switch (action.type) {
     case ACTIONS.FETCH_POSTS:
       return null;
 
     default:
-      return null;
+      return state;
   }
 };
 

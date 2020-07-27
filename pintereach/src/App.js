@@ -10,12 +10,23 @@ const App = () => {
   return (
     <Router>
       <div className='App'>
-        <Route exact path='/register'>
-          <Register />
-        </Route>
-        <Route exact path='/login'>
-          <Login />
-        </Route>
+        <div className='nav'>
+          <Link to='/'>Dashboard</Link>
+          <Link to='/login'>Login</Link>
+          <Link to='/register'>Register</Link>
+        </div>
+
+        <Switch>
+          <Route exact path='/dashboard'>
+            <Dashboard />
+          </Route>
+          <Route exact path='/register'>
+            <Register />
+          </Route>
+          <Route exact path='/login'>
+            <Login />
+          </Route>
+        </Switch>
       </div>
     </Router>
   );
