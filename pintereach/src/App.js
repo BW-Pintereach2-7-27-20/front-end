@@ -5,27 +5,26 @@ import './App.css';
 import Dashboard from './components/Dashboard';
 import Login from './components/Login';
 import Register from './components/Register';
+import PrivateRoute from './components/PrivateRoute';
 
 const App = () => {
   return (
     <Router>
       <div className='App'>
         <div className='nav'>
-          <Link to='/'>Dashboard</Link>
+          <Link to='/dashboard'>Dashboard</Link>
           <Link to='/login'>Login</Link>
           <Link to='/register'>Register</Link>
         </div>
 
         <Switch>
-          <Route exact path='/'>
-            <Dashboard />
-          </Route>
-          <Route exact path='/register'>
-            <Register />
-          </Route>
-          <Route exact path='/login'>
-            <Login />
-          </Route>
+          <PrivateRoute
+            exact
+            path='/dashboard'
+            component={Dashboard}
+          ></PrivateRoute>
+          <Route exact path='/register' component={Register} />
+          <Route exact path='/login' component={Login} />
         </Switch>
       </div>
     </Router>
