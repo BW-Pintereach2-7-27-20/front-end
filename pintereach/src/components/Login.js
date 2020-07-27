@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import styled from 'styled-components'; 
 import UsernameIcon from '../images/username-icon.png'; 
 import PassIcon from '../images/password-icon.png'; 
+import LoginIcon from '../images/login-icon.png';
 
 const initialValue = {
   username: '',
@@ -29,7 +30,7 @@ const Login = () => {
   const StyledHeader = styled.h2`
     color: indianred;
     font-weight: bold;
-    font-size: 3.0rem;
+    font-size: 3.5rem;
     text-shadow: 2px 2px gray;
     padding: 2%;
     width: 20%;
@@ -58,6 +59,28 @@ const Login = () => {
     }
   `;
 
+  const StyledButton = styled.button`
+    box-shadow: inset 0px 1px 0px 0px #cf866c;
+	  background: linear-gradient(to bottom, #d0451b 5%, #bc3315 100%);
+	  background-color: #d0451b;
+    border-radius: 3px;
+    width: 15%;
+    margin: 0 auto;
+    margin-top: 2%;
+	  border: 1px solid #942911;
+	  cursor: pointer;
+	  color: #ffffff;
+	  font-family:Arial;
+	  font-size: 1.3rem;
+	  padding: 6px 24px;
+	  text-decoration: none;
+    text-shadow: 0px 1px 0px #854629;
+    
+    img {
+      height: 3vh;
+    }
+  `;
+
 
   return (
     <StyledDiv>
@@ -80,7 +103,7 @@ const Login = () => {
           onChange={onChange}
         />
 
-        <button>Login</button>
+        <StyledButton><img src={LoginIcon} className='login' alt='login icon' /></StyledButton>
       </StyledForm>
     </StyledDiv>
   );
