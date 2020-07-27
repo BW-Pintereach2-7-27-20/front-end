@@ -19,14 +19,14 @@ const Register = (props) => {
     axiosWithAuth()
       .post('/register', inputValue)
       .then((res) => {
-        console.log(res);
-        localStorage.setItem('token', res.data.payload);
-        props.history.push('/dashboard');
+        props.history.push('/login');
       });
   };
 
   return (
     <>
+      {localStorage.getItem('token') && props.history.push('/dashboard')}
+
       <h2>Register here</h2>
       <form onSubmit={onSubmit}>
         <label htmlFor='username'>Username</label>

@@ -6,15 +6,21 @@ import Dashboard from './components/Dashboard';
 import Login from './components/Login';
 import Register from './components/Register';
 import PrivateRoute from './components/PrivateRoute';
+import NewBoard from './components/NewBoard.js';
 
 const App = () => {
   return (
     <Router>
       <div className='App'>
         <div className='nav'>
-          <Link to='/dashboard'>Dashboard</Link>
-          <Link to='/login'>Login</Link>
-          <Link to='/register'>Register</Link>
+          {localStorage.getItem('token') ? (
+            <Link to='/dashboard'>Dashboard</Link>
+          ) : (
+            <>
+              <Link to='/login'>Login</Link>
+              <Link to='/register'>Register</Link>
+            </>
+          )}
         </div>
 
         <Switch>
@@ -23,6 +29,7 @@ const App = () => {
             path='/dashboard'
             component={Dashboard}
           ></PrivateRoute>
+          <Route exact path='/new-board' component={NewBoard} />
           <Route exact path='/register' component={Register} />
           <Route exact path='/login' component={Login} />
         </Switch>

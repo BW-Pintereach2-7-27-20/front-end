@@ -19,13 +19,15 @@ const Login = (props) => {
     axiosWithAuth()
       .post('/login', inputValue)
       .then((res) => {
-        localStorage.setItem('token', res.data.payload);
+        console.log(res);
+        localStorage.setItem('token', res.data.token);
         props.history.push('/dashboard');
       });
   };
 
   return (
     <>
+      {localStorage.getItem('token') && props.history.push('/dashboard')}
       <h2>Login here</h2>
       <form onSubmit={onSubmit}>
         <label htmlFor='username'>Username</label>
