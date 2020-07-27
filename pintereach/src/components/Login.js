@@ -5,6 +5,11 @@ import { axiosWithAuth } from '../utils/axiosWithAuth';
 import Container from '../Styled/Container'; 
 import Form from '../Styled/Form';
 import Button from '../Styled/Button'; 
+import Icon from '../Styled/Icon'; 
+// icon imports 
+import userIcon from '../images/user-icon.png'; 
+import passIcon from '../images/password-icon.png'; 
+import loginIcon from '../images/login-icon.png'; 
 
 
 const initialValue = {
@@ -37,7 +42,7 @@ const Login = (props) => {
       {localStorage.getItem('token') && props.history.push('/dashboard')}
       <h2>Login here</h2>
       <Form onSubmit={onSubmit}>
-        <label htmlFor='username'>Username</label>
+        <label htmlFor='username'><Icon src={userIcon} alt='login icon' />Username</label>
         <input
           type='text'
           name='username'
@@ -45,7 +50,7 @@ const Login = (props) => {
           value={inputValue.username}
           onChange={onChange}
         />
-        <label htmlFor='password'>Password</label>
+        <label htmlFor='password'><Icon src={passIcon} alt='login icon' />Password</label>
         <input
           type='text'
           name='password'
@@ -54,7 +59,7 @@ const Login = (props) => {
           onChange={onChange}
         />
 
-        <Button>Login</Button>
+        <Button><Icon src={loginIcon} alt='login icon' /></Button>
       </Form>
     </Container>
   );

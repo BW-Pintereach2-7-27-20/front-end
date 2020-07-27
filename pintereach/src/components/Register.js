@@ -4,6 +4,10 @@ import { axiosWithAuth } from '../utils/axiosWithAuth';
 import Container from '../Styled/Container'; 
 import Form from '../Styled/Form';
 import Button from '../Styled/Button'; 
+import Icon from '../Styled/Icon';
+// img imports
+import userIcon from '../images/user-icon.png'; 
+import passIcon from '../images/password-icon.png'; 
 
 const initialValue = {
   username: '',
@@ -33,7 +37,7 @@ const Register = (props) => {
 
       <h2>Register here</h2>
       <Form onSubmit={onSubmit}>
-        <label htmlFor='username'>Username</label>
+        <label htmlFor='username'><Icon src={userIcon} alt='login icon' />Username</label>
         <input
           type='text'
           name='username'
@@ -41,7 +45,7 @@ const Register = (props) => {
           value={inputValue.username}
           onChange={onChange}
         />
-        <label htmlFor='password'>Password</label>
+        <label htmlFor='password'><Icon src={passIcon} alt='login icon' />Password</label>
         <input
           type='text'
           name='password'
