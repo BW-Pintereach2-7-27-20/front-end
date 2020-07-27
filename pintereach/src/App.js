@@ -7,14 +7,13 @@ import Login from './components/Login';
 import Register from './components/Register';
 import PrivateRoute from './components/PrivateRoute';
 import NewBoard from './components/NewBoard.js';
-
-import styled from 'styled-components'; 
+import styled from 'styled-components';
 
 const StyledHeader = styled.div`
-  font-size: 2.0rem;
+  font-size: 2rem;
   display: flex;
-  justify-content: space-between; 
-  
+  justify-content: space-between;
+
   Link {
     border: 1px solid red;
   }
@@ -24,7 +23,6 @@ const App = () => {
   return (
     <Router>
       <div className='App'>
-    
         <StyledHeader className='nav'>
           {localStorage.getItem('token') ? (
             <Link to='/dashboard'>Dashboard</Link>

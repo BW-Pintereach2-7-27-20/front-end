@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { axiosWithAuth } from '../utils/axiosWithAuth';
 
-import styled from 'styled-components'; 
+import styled from 'styled-components';
 
 const StyledDiv = styled.div`
   display: flex;
@@ -11,9 +11,9 @@ const StyledDiv = styled.div`
   height: 80vh;
 
   h2 {
-   width: 40%; 
-   align-self: center;
-   font-size: 3.0rem;
+    width: 40%;
+    align-self: center;
+    font-size: 3rem;
   }
 `;
 
@@ -65,7 +65,6 @@ const Login = (props) => {
   };
 
   return (
-    
     <StyledDiv>
       {localStorage.getItem('token') && props.history.push('/dashboard')}
       <h2>Login here</h2>
