@@ -1,4 +1,4 @@
 import { combineReducers } from 'redux';
-import postReducer from './postReducer';
+import boardReducer from './boardReducer';
 
-export const rootReducer = combineReducers({ post: postReducer });
+export const rootReducer = combineReducers({ post: boardReducer });
