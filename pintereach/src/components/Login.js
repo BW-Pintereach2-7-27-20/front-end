@@ -1,10 +1,43 @@
 import React, { useState } from 'react';
 
 import styled from 'styled-components'; 
-import UsernameIcon from '../images/username-icon.png'; 
-import PassIcon from '../images/password-icon.png'; 
-import LoginIcon from '../images/login-icon.png';
-import Background from '../images/dummy-background.jpg';
+
+const StyledDiv = styled.div`
+  display: flex;
+  justify-content: center;
+  border: 1px solid red;
+  width: 80vw;
+  height: 80vh;
+
+  h2 {
+   width: 40%; 
+   align-self: center;
+   font-size: 3.0rem;
+  }
+`;
+
+const StyledForm = styled.form`
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  width: 40%;
+  padding: 5%;
+
+  label {
+    font-size: 1.8rem;
+    margin: 1%;
+  }
+
+  input {
+    height: 2.5vh;
+  }
+`;
+
+const StyledButton = styled.button`
+  width: 20%;
+  margin: 0 auto;
+  margin-top: 2%;
+`;
 
 const initialValue = {
   username: '',
@@ -23,9 +56,9 @@ const Login = () => {
   };
 
   return (
-    <>
+    <StyledDiv>
       <h2>Login here</h2>
-      <form onSubmit={onSubmit}>
+      <StyledForm onSubmit={onSubmit}>
         <label htmlFor='username'>Username</label>
         <input
           type='text'
@@ -43,9 +76,9 @@ const Login = () => {
           onChange={onChange}
         />
 
-        <button>Login</button>
-      </form>
-    </>
+        <StyledButton>Login</StyledButton>
+      </StyledForm>
+    </StyledDiv>
   );
 };
 
