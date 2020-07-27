@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { axiosWithAuth } from '../utils/axiosWithAuth';
 
 const initialValue = {
   username: '',
@@ -14,6 +15,13 @@ const Login = () => {
 
   const onSubmit = (e) => {
     e.preventDefault();
+
+    axiosWithAuth()
+      .post('/login')
+      .then((res) => {
+        localStorage.setItem('token', res.data.payload);
+        props.history.push('/dashboard');
+      });
   };
 
   return (
