@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { axiosWithAuth } from '../utils/axiosWithAuth';
 
 import styled from 'styled-components'; 
 
@@ -44,7 +45,7 @@ const initialValue = {
   password: '',
 };
 
-const Login = () => {
+const Login = (props) => {
   const [inputValue, setInputValue] = useState(initialValue);
 
   const onChange = (e) => {
@@ -53,10 +54,20 @@ const Login = () => {
 
   const onSubmit = (e) => {
     e.preventDefault();
+
+    axiosWithAuth()
+      .post('/login', inputValue)
+      .then((res) => {
+        console.log(res);
+        localStorage.setItem('token', res.data.token);
+        props.history.push('/dashboard');
+      });
   };
 
   return (
+    
     <StyledDiv>
+      {localStorage.getItem('token') && props.history.push('/dashboard')}
       <h2>Login here</h2>
       <StyledForm onSubmit={onSubmit}>
         <label htmlFor='username'>Username</label>
