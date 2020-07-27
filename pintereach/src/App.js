@@ -12,10 +12,7 @@ const StyledHeader = styled.div`
   font-size: 2.0rem;
   display: flex;
   justify-content: space-between; 
-  
-  Link {
-    border: 1px solid red;
-  }
+  color: white;
 `;
 
 const App = () => {

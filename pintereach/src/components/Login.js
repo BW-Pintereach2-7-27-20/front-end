@@ -8,11 +8,16 @@ const StyledDiv = styled.div`
   border: 1px solid red;
   width: 80vw;
   height: 80vh;
+  margin-top: 5%;
+  background-color: lavenderblush;
+  opacity: 95%;
 
   h2 {
    width: 40%; 
    align-self: center;
    font-size: 3.0rem;
+   color: indianred;
+   text-shadow: 2px 2px white;
   }
 `;
 
@@ -37,6 +42,18 @@ const StyledButton = styled.button`
   width: 20%;
   margin: 0 auto;
   margin-top: 2%;
+  box-shadow: inset 0px 1px 0px 0px #cf866c;
+	background: linear-gradient(to bottom, #d0451b 5%, #bc3315 100%);
+	background-color: #d0451b;
+	border-radius: 3px;
+	border: 1px solid #942911;
+	cursor: pointer;
+	color: #ffffff;
+	font-family: Arial;
+	font-size: 13px;
+	padding: 6px 24px;
+	text-decoration: none;
+	text-shadow: 0px 1px 0px #854629;
 `;
 
 const initialValue = {
@@ -57,7 +74,7 @@ const Login = () => {
 
   return (
     <StyledDiv>
-      <h2>Login here</h2>
+      <h2>Login</h2>
       <StyledForm onSubmit={onSubmit}>
         <label htmlFor='username'>Username</label>
         <input
