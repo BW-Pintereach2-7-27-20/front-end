@@ -2,6 +2,7 @@ import * as ACTIONS from '../actions';
 
 const initialState = {
   isLoading: false,
+  boards: [],
 };
 
 const postReducer = (state = initialState, action) => {
@@ -10,6 +11,12 @@ const postReducer = (state = initialState, action) => {
       return {
         ...state,
         isLoading: true,
+      };
+    case ACTIONS.FETCH_BOARDS_SUCCESS:
+      return {
+        ...state,
+        isLoading: false,
+        boards: action.payload,
       };
 
     default:

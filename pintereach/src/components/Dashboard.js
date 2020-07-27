@@ -12,7 +12,7 @@ const Dashboard = (props) => {
     <div>
       <h2>Boards Go here</h2>
       <Link to='/new-board'>Create new Board</Link>
-      {props.isLoading && <span>Loading Boards</span>}
+      {props.isLoading && <span>Loading Boards...</span>}
     </div>
   );
 };
@@ -20,6 +20,7 @@ const Dashboard = (props) => {
 const mapStateToProps = (state) => {
   return {
     isLoading: state.isLoading,
+    boards: state.boards,
   };
 };
 

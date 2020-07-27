@@ -6,23 +6,37 @@ import Dashboard from './components/Dashboard';
 import Login from './components/Login';
 import Register from './components/Register';
 import PrivateRoute from './components/PrivateRoute';
+import NewBoard from './components/NewBoard.js';
+
 import styled from 'styled-components'; 
 
 const StyledHeader = styled.div`
   font-size: 2.0rem;
   display: flex;
-  justify-content: space-between; 
-  
+`;
+
+const StyledLink = styled(Link)`
+  text-decoration: none;
+  color: indianred;
+  text-shadow: 2px 2px white;
+  font-weight: bold;
+  padding: 2%;
 `;
 
 const App = () => {
   return (
     <Router>
       <div className='App'>
+    
         <StyledHeader className='nav'>
-          <Link to='/dashboard'>Dashboard</Link>
-          <Link to='/login'>Login</Link>
-          <Link to='/register'>Register</Link>
+          {localStorage.getItem('token') ? (
+            <Link to='/dashboard'>Dashboard</Link>
+          ) : (
+            <>
+              <StyledLink to='/login'>Login</StyledLink>
+              <StyledLink to='/register'>Register</StyledLink>
+            </>
+          )}
         </StyledHeader>
 
         <Switch>
@@ -31,6 +45,7 @@ const App = () => {
             path='/dashboard'
             component={Dashboard}
           ></PrivateRoute>
+          <Route exact path='/new-board' component={NewBoard} />
           <Route exact path='/register' component={Register} />
           <Route exact path='/login' component={Login} />
         </Switch>

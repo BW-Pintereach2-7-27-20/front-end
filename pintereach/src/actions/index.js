@@ -3,9 +3,10 @@ import { axiosWithAuth } from '../utils/axiosWithAuth';
 export const FETCH_BOARDS_START = 'FETCH_BOARDS_START';
 export const FETCH_BOARDS_SUCCESS = 'FETCH_BOARDS_SUCCESS';
 export const FETCH_BOARDS_ERROR = 'FETCH_BOARDS_ERROR';
-export const NEW_POST = 'NEW_POST';
-export const DELETE_POST = 'DELETE_POST';
-export const EDIT_POST = 'EDIT_POST';
+
+export const NEW_BOARD_START = 'NEW_BOARD_START';
+export const NEW_BOARD_SUCCESS = 'NEW_BOARD_SUCCESS';
+export const NEW_BOARD_ERROR = 'NEW_BOARD_ERROR';
 
 export const fetchBoards = () => {
   return (dispatch) => {

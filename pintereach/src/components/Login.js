@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
+import { axiosWithAuth } from '../utils/axiosWithAuth';
 
 import styled from 'styled-components'; 
+
 
 const StyledDiv = styled.div`
   display: flex;
@@ -8,7 +10,6 @@ const StyledDiv = styled.div`
   border: 1px solid red;
   width: 80vw;
   height: 80vh;
-  margin-top: 5%;
   background-color: lavenderblush;
   opacity: 95%;
 
@@ -38,10 +39,11 @@ const StyledForm = styled.form`
   }
 
   input {
-    height: 2.5vh;
+    height: 3vh;
     background-color: coral;
-    color: white;
-    opacity: 80%;
+    opacity: 70%;
+    font-weight: bold;
+    font-size: 1.4rem;
   }
 `;
 
@@ -57,7 +59,7 @@ const StyledButton = styled.button`
 	cursor: pointer;
 	color: #ffffff;
 	font-family: Arial;
-	font-size: 13px;
+	font-size: 1.3rem;
 	padding: 6px 24px;
 	text-decoration: none;
 	text-shadow: 0px 1px 0px #854629;
@@ -68,7 +70,7 @@ const initialValue = {
   password: '',
 };
 
-const Login = () => {
+const Login = (props) => {
   const [inputValue, setInputValue] = useState(initialValue);
 
   const onChange = (e) => {
@@ -77,11 +79,21 @@ const Login = () => {
 
   const onSubmit = (e) => {
     e.preventDefault();
+
+    axiosWithAuth()
+      .post('/login', inputValue)
+      .then((res) => {
+        console.log(res);
+        localStorage.setItem('token', res.data.token);
+        props.history.push('/dashboard');
+      });
   };
 
   return (
+    
     <StyledDiv>
-      <h2>Login</h2>
+      {localStorage.getItem('token') && props.history.push('/dashboard')}
+      <h2>Login here</h2>
       <StyledForm onSubmit={onSubmit}>
         <label htmlFor='username'>Username</label>
         <input
