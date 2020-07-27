@@ -1,5 +1,9 @@
 import React, { useState } from 'react';
 import { axiosWithAuth } from '../utils/axiosWithAuth';
+// styled components imports - each in their own folder in Styled 
+import Container from '../Styled/Container'; 
+import Form from '../Styled/Form';
+import Button from '../Styled/Button'; 
 
 const initialValue = {
   username: '',
@@ -24,11 +28,11 @@ const Register = (props) => {
   };
 
   return (
-    <>
+    <Container>
       {localStorage.getItem('token') && props.history.push('/dashboard')}
 
       <h2>Register here</h2>
-      <form onSubmit={onSubmit}>
+      <Form onSubmit={onSubmit}>
         <label htmlFor='username'>Username</label>
         <input
           type='text'
@@ -46,9 +50,9 @@ const Register = (props) => {
           onChange={onChange}
         />
 
-        <button>Register</button>
-      </form>
-    </>
+        <Button>Register</Button>
+      </Form>
+    </Container>
   );
 };
 
