@@ -1,7 +1,11 @@
 import React from 'react';
 
-const DashBoard = () => {
-  return <div></div>;
+const Dashboard = () => {
+  return (
+    <div>
+      <h2>Boards Go here</h2>
+    </div>
+  );
 };
 
-export default DashBoard;
+export default Dashboard;

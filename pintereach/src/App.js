@@ -17,7 +17,7 @@ const App = () => {
         </div>
 
         <Switch>
-          <Route exact path='/dashboard'>
+          <Route exact path='/'>
             <Dashboard />
           </Route>
           <Route exact path='/register'>
