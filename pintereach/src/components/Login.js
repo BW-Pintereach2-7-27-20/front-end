@@ -15,7 +15,9 @@ const StyledDiv = styled.div`
   h2 {
    width: 40%; 
    align-self: center;
-   font-size: 3.0rem;
+   font-size: 4.0rem;
+   font-family: 'Roboto Slab', serif;
+   font-weight: bold;
    color: indianred;
    text-shadow: 2px 2px white;
   }
@@ -31,10 +33,15 @@ const StyledForm = styled.form`
   label {
     font-size: 1.8rem;
     margin: 1%;
+    font-family: 'Roboto Slab', serif;
+    font-weight: bold;
   }
 
   input {
     height: 2.5vh;
+    background-color: coral;
+    color: white;
+    opacity: 80%;
   }
 `;
 

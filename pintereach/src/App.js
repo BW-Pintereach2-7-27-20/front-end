@@ -12,7 +12,7 @@ const StyledHeader = styled.div`
   font-size: 2.0rem;
   display: flex;
   justify-content: space-between; 
-  color: white;
+  
 `;
 
 const App = () => {
