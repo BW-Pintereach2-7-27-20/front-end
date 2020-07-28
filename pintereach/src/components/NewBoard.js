@@ -18,6 +18,7 @@ const NewBoard = (props) => {
     e.preventDefault();
 
     props.postBoard(inputValue);
+    props.history.push('/dashboard');
   };
 
   return (
@@ -46,8 +47,8 @@ const NewBoard = (props) => {
 
 const mapStateToProps = (state) => {
   return {
-    name: state.board.name,
-    description: state.board.description,
+    name: state.name,
+    description: state.description,
   };
 };
 

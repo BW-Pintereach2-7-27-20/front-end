@@ -10,22 +10,13 @@ const Dashboard = (props) => {
 
   return (
     <div>
-      <div className='board-wrapper'>
-        <h2>Board Title</h2>
-        <ul>
-          <li>
-            <img src='' alt='article thumbnail' />
-            <p>Article title</p>
-          </li>
-        </ul>
-      </div>
       <Link to='/new-board'>Create new Board</Link>
       {props.isLoading && <span>Loading Boards...</span>}
       {props.boards &&
         props.boards.map((board) => (
-          <div>
+          <div className='board-wrapper'>
             <Link to={`/boards/${board.id}`} key={board.id}>
-              {board.name}
+              <h2>{board.name}</h2>
             </Link>
             <p>{board.description}</p>
           </div>
