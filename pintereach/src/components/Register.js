@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import { axiosWithAuth } from '../utils/axiosWithAuth';
-// styled components imports - each in their own folder in Styled 
-import Container from '../Styled/Container'; 
+// styled components imports - each in their own folder in Styled
+import Container from '../Styled/Container';
 import Form from '../Styled/Form';
-import Button from '../Styled/Button'; 
+import Button from '../Styled/Button';
 import Icon from '../Styled/Icon';
 // img imports
-import userIcon from '../images/user-icon.png'; 
-import passIcon from '../images/password-icon.png'; 
+import userIcon from '../images/user-icon.png';
+import passIcon from '../images/password-icon.png';
 
 const initialValue = {
   username: '',
@@ -37,7 +37,10 @@ const Register = (props) => {
 
       <h2>Register here</h2>
       <Form onSubmit={onSubmit}>
-        <label htmlFor='username'><Icon src={userIcon} alt='login icon' />Username</label>
+        <label htmlFor='username'>
+          <Icon src={userIcon} alt='login icon' />
+          Username
+        </label>
         <input
           type='text'
           name='username'
@@ -45,9 +48,12 @@ const Register = (props) => {
           value={inputValue.username}
           onChange={onChange}
         />
-        <label htmlFor='password'><Icon src={passIcon} alt='login icon' />Password</label>
+        <label htmlFor='password'>
+          <Icon src={passIcon} alt='login icon' />
+          Password
+        </label>
         <input
-          type='text'
+          type='password'
           name='password'
           placeholder='********'
           value={inputValue.password}

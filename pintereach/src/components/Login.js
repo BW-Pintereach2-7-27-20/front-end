@@ -1,17 +1,15 @@
 import React, { useState } from 'react';
 import { axiosWithAuth } from '../utils/axiosWithAuth';
 
-
-// styled components imports - each in their own folder in Styled 
-import Container from '../Styled/Container'; 
+// styled components imports - each in their own folder in Styled
+import Container from '../Styled/Container';
 import Form from '../Styled/Form';
-import Button from '../Styled/Button'; 
-import Icon from '../Styled/Icon'; 
-// icon imports 
-import userIcon from '../images/user-icon.png'; 
-import passIcon from '../images/password-icon.png'; 
-import loginIcon from '../images/login-icon.png'; 
-
+import Button from '../Styled/Button';
+import Icon from '../Styled/Icon';
+// icon imports
+import userIcon from '../images/user-icon.png';
+import passIcon from '../images/password-icon.png';
+import loginIcon from '../images/login-icon.png';
 
 import styled from 'styled-components';
 
@@ -52,7 +50,6 @@ const StyledButton = styled.button`
   margin-top: 2%;
 `;
 
-
 const initialValue = {
   username: '',
   password: '',
@@ -78,13 +75,14 @@ const Login = (props) => {
   };
 
   return (
-
     <StyledDiv>
-
       {localStorage.getItem('token') && props.history.push('/dashboard')}
       <h2>Login here</h2>
       <Form onSubmit={onSubmit}>
-        <label htmlFor='username'><Icon src={userIcon} alt='login icon' />Username</label>
+        <label htmlFor='username'>
+          <Icon src={userIcon} alt='login icon' />
+          Username
+        </label>
         <input
           type='text'
           name='username'
@@ -92,18 +90,23 @@ const Login = (props) => {
           value={inputValue.username}
           onChange={onChange}
         />
-        <label htmlFor='password'><Icon src={passIcon} alt='login icon' />Password</label>
+        <label htmlFor='password'>
+          <Icon src={passIcon} alt='login icon' />
+          Password
+        </label>
         <input
-          type='text'
+          type='password'
           name='password'
           placeholder='********'
           value={inputValue.password}
           onChange={onChange}
         />
 
-        <Button><Icon src={loginIcon} alt='login icon' /></Button>
+        <Button>
+          <Icon src={loginIcon} alt='login icon' />
+        </Button>
       </Form>
-    </Container>
+    </StyledDiv>
   );
 };
 
