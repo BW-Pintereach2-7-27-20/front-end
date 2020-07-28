@@ -3,7 +3,7 @@ import { axiosWithAuth } from '../utils/axiosWithAuth';
 // styled components imports - each in defined individually in Styled
 import Container from '../styled/Container';
 import Form from '../styled/Form';
-// import Button from '../styled/Button';
+import Button from '../styled/Button';
 import Icon from '../styled/Icon';
 // img imports
 import userIcon from '../images/user-icon.png';
@@ -98,8 +98,7 @@ const Register = (props) => {
           onChange={onChange}
         />
 
-        <button disabled={disabled}>Register</button>
-      </Form>
+        <Button disabled={disabled}>Register</Button>
 
       {/* rendering validation errors here */}
       <div className='errors'>
@@ -107,6 +106,7 @@ const Register = (props) => {
           <div>{registerErrors.password}</div>
       </div>
 
+      </Form>
     </Container>
   );
 };
