@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { axiosWithAuth } from '../utils/axiosWithAuth';
-// styled components imports - each in their own folder in Styled 
-import Container from '../Styled/Container'; 
-import Form from '../Styled/Form';
-import Button from '../Styled/Button'; 
-import Icon from '../Styled/Icon';
+// styled components imports - each in defined individually in Styled 
+import Container from '../styled/Container'; 
+import Form from '../styled/Form';
+import Button from '../styled/Button'
+import Icon from '../styled/Icon';
 // img imports
 import userIcon from '../images/user-icon.png'; 
 import passIcon from '../images/password-icon.png'; 
@@ -35,7 +35,7 @@ const Register = (props) => {
     <Container>
       {localStorage.getItem('token') && props.history.push('/dashboard')}
 
-      <h2>Register here</h2>
+      <h2>Register</h2>
       <Form onSubmit={onSubmit}>
         <label htmlFor='username'><Icon src={userIcon} alt='login icon' />Username</label>
         <input

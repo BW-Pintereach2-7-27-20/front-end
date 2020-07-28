@@ -12,7 +12,7 @@ import styled from 'styled-components';
 const StyledHeader = styled.div`
   font-size: 2rem;
   display: flex;
-
+  width: 40%;
 `;
 
 const StyledLink = styled(Link)`
@@ -24,8 +24,8 @@ const StyledLink = styled(Link)`
 
   justify-content: space-between;
 
-  Link {
-    border: 1px solid red;
+  &:hover {
+    text-decoration: underline;
   }
 
 `;
