@@ -21,7 +21,15 @@ const Dashboard = (props) => {
       </div>
       <Link to='/new-board'>Create new Board</Link>
       {props.isLoading && <span>Loading Boards...</span>}
-      {console.log(props.isLoading)}
+      {props.boards &&
+        props.boards.map((board) => (
+          <div>
+            <Link to={`/boards/${board.id}`} key={board.id}>
+              {board.name}
+            </Link>
+            <p>{board.description}</p>
+          </div>
+        ))}
     </div>
   );
 };
