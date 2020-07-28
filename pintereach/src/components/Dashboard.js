@@ -10,7 +10,15 @@ const Dashboard = (props) => {
 
   return (
     <div>
-      <h2>Boards Go here</h2>
+      <div className='board-wrapper'>
+        <h2>Board Title</h2>
+        <ul>
+          <li>
+            <img src='' alt='article thumbnail' />
+            <p>Article title</p>
+          </li>
+        </ul>
+      </div>
       <Link to='/new-board'>Create new Board</Link>
       {props.isLoading && <span>Loading Boards...</span>}
       {console.log(props.isLoading)}

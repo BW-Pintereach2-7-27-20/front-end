@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { axiosWithAuth } from '../utils/axiosWithAuth';
 // styled components imports - each in defined individually in Styled
 import Container from '../styled/Container';
@@ -8,17 +8,30 @@ import Icon from '../styled/Icon';
 // img imports
 import userIcon from '../images/user-icon.png';
 import passIcon from '../images/password-icon.png';
+// validation schema
+import * as yup from 'yup';
+import registerSchema from '../validation/registerSchema';
 
 const initialValue = {
   username: '',
   password: '',
 };
 
+const initialRegisterErrors = {
+  username: '', 
+  password: '', 
+}; 
+
+const initialBtnDisable = true;
+
 const Register = (props) => {
   const [inputValue, setInputValue] = useState(initialValue);
+  const [registerErrors, setRegisterErrors] = useState(initialRegisterErrors); 
+  const [disabled, setDisabled] = useState(initialBtnDisable); 
 
   const onChange = (e) => {
     setInputValue({ ...inputValue, [e.target.name]: e.target.value });
+    validateChange(e);
   };
 
   const onSubmit = (e) => {
@@ -30,6 +43,31 @@ const Register = (props) => {
         props.history.push('/login');
       });
   };
+
+  function validateChange(e) {
+    e.persist();
+    yup
+    .reach(registerSchema, e.target.name)
+    .validate(e.target.value)
+    .then(valid => {
+        setRegisterErrors({
+          ...registerErrors,
+          [e.target.name]: '',
+        })
+    })
+    .catch(err => {
+      setRegisterErrors({
+        ...registerErrors,
+        [e.target.name]: err.errors[0],
+      })
+    })
+  }
+
+  useEffect(() => {
+    registerSchema.isValid(inputValue).then(valid => {
+      setDisabled(!valid)
+    })
+  }, [inputValue]);
 
   return (
     <Container>
@@ -60,7 +98,14 @@ const Register = (props) => {
           onChange={onChange}
         />
 
-        <Button>Register</Button>
+        <Button disabled={disabled}>Register</Button>
+
+      {/* rendering validation errors here */}
+      <div className='errors'>
+          <div>{registerErrors.username}</div>
+          <div>{registerErrors.password}</div>
+      </div>
+
       </Form>
     </Container>
   );

@@ -44,41 +44,40 @@ const NewArticle = (props) => {
             <form className='articleForm'> 
             
             <label htmlFor='url'>url:</label>
-            <input 
-            type='text'
-            name='url'
-            placeholder='newarticle.com/info'
-            value={inputValue.url}
-            onChange={onChange}
-            />
+                <input 
+                type='text'
+                name='url'
+                placeholder='newarticle.com/info'
+                value={inputValue.url}
+                onChange={onChange}
+                />
             <label htmlFor='title'>Title:</label>
-            <input 
-            type='text'
-            name='title'
-            placeholder='article title'
-            value={inputValue.title}
-            onChange={onChange}
-            />
+                <input 
+                type='text'
+                name='title'
+                placeholder='article title'
+                value={inputValue.title}
+                onChange={onChange}
+                />
             <label htmlFor='author'>Author:</label>
-            <input 
-            type='text'
-            name='author'
-            placeholder='author name'
-            value={inputValue.author}
-            onChange={onChange}
-            />
+                <input 
+                type='text'
+                name='author'
+                placeholder='author name'
+                value={inputValue.author}
+                onChange={onChange}
+                />
             <label htmlFor='host'>Host:</label>
-            <input 
-            type='text'
-            name='host'
-            placeholder='host'
-            value={inputValue.host}
-            onChange={onChange}
-            />
-
-            </form>
+                <input 
+                type='text'
+                name='host'
+                placeholder='host'
+                value={inputValue.host}
+                onChange={onChange}
+                />
 
             <button disabled={disabled}>Submit</button>
+            </form>
         </div>
     )
 }
