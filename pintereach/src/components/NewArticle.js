@@ -1,4 +1,5 @@
-import React, { useState } from 'react'; 
+import React, { useState, useEffect } from 'react'; 
+import formSchema from '../validation/formSchema';
 
     // setting initial form state
     // should we add a checkbox form input to organize the new articles to an appropriate board? i.e. (category { research: false, personal: false, coding: false, })
@@ -12,16 +13,29 @@ import React, { useState } from 'react';
 
     // will there be an error schema to adhere to? Checking to make sure a url is added?
 
-    const initialFormErrors = {
+    const initialInputErrors = {
         url: '',
     }
 
+    const initialBtnDisable = true;
+
+    // useEffect: Logic: If the form schema is valid, then set the disabled button to 'not disabled' 
+
 const NewArticle = (props) => { 
-    const [inputValue, setInputValue] = useState(initialNewArticle); 
+    const [inputValue, setInputValue] = useState(initialNewArticle);
+    const [inputErrors, setInputErrors] = useState(initialInputErrors); 
+    // button state, disabled until a url of 5 characters is supplied by user 
+    const [disabled, setDisabled] = useState(initialBtnDisable); 
 
     const onChange = (e) => {
         setInputValue({...inputValue, [e.target.name]: e.target.value});
-    }
+    };
+
+    useEffect(() => {
+        formSchema.isValid(inputValue).then(valid => {
+            setDisabled(!valid)
+        })
+    }, [inputValue]);
 
     return (
         <div>
@@ -34,6 +48,7 @@ const NewArticle = (props) => {
             type='text'
             name='url'
             placeholder='newarticle.com/info'
+            value={inputValue.url}
             onChange={onChange}
             />
             <label htmlFor='title'>Title:</label>
@@ -41,6 +56,7 @@ const NewArticle = (props) => {
             type='text'
             name='title'
             placeholder='article title'
+            value={inputValue.title}
             onChange={onChange}
             />
             <label htmlFor='author'>Author:</label>
@@ -48,6 +64,7 @@ const NewArticle = (props) => {
             type='text'
             name='author'
             placeholder='author name'
+            value={inputValue.author}
             onChange={onChange}
             />
             <label htmlFor='host'>Host:</label>
@@ -55,12 +72,13 @@ const NewArticle = (props) => {
             type='text'
             name='host'
             placeholder='host'
+            value={inputValue.host}
             onChange={onChange}
             />
 
             </form>
 
-            <button>Submit</button>
+            <button disabled={disabled}>Submit</button>
         </div>
     )
 }
