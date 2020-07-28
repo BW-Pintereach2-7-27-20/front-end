@@ -12,11 +12,22 @@ import styled from 'styled-components';
 const StyledHeader = styled.div`
   font-size: 2rem;
   display: flex;
+
+`;
+
+const StyledLink = styled(Link)`
+  text-decoration: none;
+  color: indianred;
+  text-shadow: 2px 2px white;
+  font-weight: bold;
+  padding: 2%;
+
   justify-content: space-between;
 
   Link {
     border: 1px solid red;
   }
+
 `;
 
 const App = () => {
@@ -28,8 +39,8 @@ const App = () => {
             <Link to='/dashboard'>Dashboard</Link>
           ) : (
             <>
-              <Link to='/login'>Login</Link>
-              <Link to='/register'>Register</Link>
+              <StyledLink to='/login'>Login</StyledLink>
+              <StyledLink to='/register'>Register</StyledLink>
             </>
           )}
         </StyledHeader>

@@ -1,6 +1,18 @@
 import React, { useState } from 'react';
 import { axiosWithAuth } from '../utils/axiosWithAuth';
 
+
+// styled components imports - each in their own folder in Styled 
+import Container from '../Styled/Container'; 
+import Form from '../Styled/Form';
+import Button from '../Styled/Button'; 
+import Icon from '../Styled/Icon'; 
+// icon imports 
+import userIcon from '../images/user-icon.png'; 
+import passIcon from '../images/password-icon.png'; 
+import loginIcon from '../images/login-icon.png'; 
+
+
 import styled from 'styled-components';
 
 const StyledDiv = styled.div`
@@ -40,6 +52,7 @@ const StyledButton = styled.button`
   margin-top: 2%;
 `;
 
+
 const initialValue = {
   username: '',
   password: '',
@@ -65,11 +78,13 @@ const Login = (props) => {
   };
 
   return (
+
     <StyledDiv>
+
       {localStorage.getItem('token') && props.history.push('/dashboard')}
       <h2>Login here</h2>
-      <StyledForm onSubmit={onSubmit}>
-        <label htmlFor='username'>Username</label>
+      <Form onSubmit={onSubmit}>
+        <label htmlFor='username'><Icon src={userIcon} alt='login icon' />Username</label>
         <input
           type='text'
           name='username'
@@ -77,7 +92,7 @@ const Login = (props) => {
           value={inputValue.username}
           onChange={onChange}
         />
-        <label htmlFor='password'>Password</label>
+        <label htmlFor='password'><Icon src={passIcon} alt='login icon' />Password</label>
         <input
           type='text'
           name='password'
@@ -86,9 +101,9 @@ const Login = (props) => {
           onChange={onChange}
         />
 
-        <StyledButton>Login</StyledButton>
-      </StyledForm>
-    </StyledDiv>
+        <Button><Icon src={loginIcon} alt='login icon' /></Button>
+      </Form>
+    </Container>
   );
 };
 

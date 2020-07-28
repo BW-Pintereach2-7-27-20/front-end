@@ -47,6 +47,9 @@ table {
 body {
 	display: flex;
 	justify-content: center;
+	background-image: url(./images/dummy-background.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
 }
 
 
