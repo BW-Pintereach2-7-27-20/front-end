@@ -128,12 +128,11 @@ table {
 body {
 	display: flex;
 	justify-content: center;
+	text-align: center;
 	background-image: url(./images/dummy-background.jpg);
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-attachment: fixed;
 }
 
-.App {
-	text-align: center;
-}
+
