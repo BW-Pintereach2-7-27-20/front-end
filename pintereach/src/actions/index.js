@@ -23,12 +23,14 @@ export const fetchBoards = () => (dispatch) => {
     });
 };
 
-export const postBoard = () => (dispatch) => {
+export const postBoard = (content) => (dispatch) => {
   dispatch({
     type: NEW_BOARD_START,
   });
   axiosWithAuth()
-    .post((res) => {
+    .post('/boards', content)
+    .then((res) => {
+      console.log(res);
       dispatch({ type: NEW_BOARD_SUCCESS, payload: res.data });
     })
     .catch((err) => {

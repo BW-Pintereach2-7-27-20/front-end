@@ -1,12 +1,42 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { connect } from 'react-redux';
+import { postBoard } from '../actions';
 
-const NewBoard = () => {
+const initialState = {
+  name: '',
+  description: '',
+};
+
+const NewBoard = (props) => {
+  const [inputValue, setInputValue] = useState(initialState);
+
+  const onChange = (e) => {
+    setInputValue({ ...inputValue, [e.target.name]: e.target.value });
+  };
+
+  const onSubmit = (e) => {
+    e.preventDefault();
+
+    props.postBoard(inputValue);
+  };
+
   return (
     <div>
-      <form>
-        <input type='text' placeholder='title' />
-        <input type='text' placeholder='description' />
-        <input type='text' placeholder='testing' />
+      <form onSubmit={onSubmit}>
+        <input
+          type='text'
+          placeholder='name'
+          name='name'
+          value={inputValue.name}
+          onChange={onChange}
+        />
+        <input
+          type='text'
+          placeholder='description'
+          name='description'
+          value={inputValue.description}
+          onChange={onChange}
+        />
 
         <button>Submit</button>
       </form>
@@ -14,4 +44,11 @@ const NewBoard = () => {
   );
 };
 
-export default NewBoard;
+const mapStateToProps = (state) => {
+  return {
+    name: state.name,
+    description: state.description,
+  };
+};
+
+export default connect(mapStateToProps, { postBoard })(NewBoard);
