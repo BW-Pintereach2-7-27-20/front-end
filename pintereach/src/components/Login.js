@@ -9,7 +9,6 @@ import Icon from '../Styled/Icon';
 // icon imports 
 import userIcon from '../images/user-icon.png'; 
 import passIcon from '../images/password-icon.png'; 
-import loginIcon from '../images/login-icon.png'; 
 
 
 const initialValue = {
@@ -59,7 +58,7 @@ const Login = (props) => {
           onChange={onChange}
         />
 
-        <Button><Icon src={loginIcon} alt='login icon' /></Button>
+        <Button>Login</Button>
       </Form>
     </Container>
   );
