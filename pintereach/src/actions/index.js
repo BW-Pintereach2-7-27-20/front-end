@@ -15,7 +15,6 @@ export const fetchBoards = () => (dispatch) => {
   axiosWithAuth()
     .get('/boards')
     .then((res) => {
-      console.log(res);
       dispatch({ type: FETCH_BOARDS_SUCCESS, payload: res.data });
     })
     .catch((err) => {
@@ -30,7 +29,6 @@ export const postBoard = (content) => (dispatch) => {
   axiosWithAuth()
     .post('/boards', content)
     .then((res) => {
-      console.log(res);
       dispatch({ type: NEW_BOARD_SUCCESS, payload: res.data });
     })
     .catch((err) => {

@@ -46,8 +46,8 @@ const NewBoard = (props) => {
 
 const mapStateToProps = (state) => {
   return {
-    name: state.name,
-    description: state.description,
+    name: state.board.name,
+    description: state.board.description,
   };
 };
 
