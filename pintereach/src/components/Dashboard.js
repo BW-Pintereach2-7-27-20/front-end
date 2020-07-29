@@ -12,6 +12,7 @@ const Dashboard = (props) => {
 
   const breakpointColumnsObj = {
     default: 6,
+    1100: 4,
   };
 
   return (
