@@ -35,23 +35,6 @@ const Dashboard = (props) => {
   }, []);
 
   return (
-<<<<<<< HEAD
-    <StyledContainer>
-      <StyledDiv>
-        <h2>Board Title</h2>
-        <img src='' alt='board thumbnail' />
-        {/* eventually enable a toggle to drop down ul of articles */}
-        <ul>
-          <li>
-            <p>Article title</p>
-          </li>
-        </ul>
-      </StyledDiv>
-      <Link to='/new-board'>Create new Board</Link>
-      {props.isLoading && <span>Loading Boards...</span>}
-      {console.log(props.isLoading)}
-    </StyledContainer>
-=======
     <div>
       <Link to='/new-board'>Create new Board</Link>
       {props.isLoading && <span>Loading Boards...</span>}
@@ -65,7 +48,6 @@ const Dashboard = (props) => {
           </div>
         ))}
     </div>
->>>>>>> 5f138ffaf7ae1809a20ff7550c99f9372e2c9b6e
   );
 };
 
