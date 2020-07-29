@@ -8,8 +8,9 @@ import Register from './components/Register';
 import PrivateRoute from './components/PrivateRoute';
 import NewBoard from './components/NewBoard.js';
 import NewArticle from './components/NewArticle.js';
+import Articles from './components/Articles.js';
 import styled from 'styled-components';
-import Button from './styled/Button'; 
+import Button from './styled/Button';
 
 const StyledHeader = styled.div`
   display: flex;
@@ -19,12 +20,11 @@ const StyledHeader = styled.div`
 `;
 
 const StyledNavLink = styled(NavLink)`
-  text-decoration: none; 
+  text-decoration: none;
   font-family: 'Roboto Slab', serif;
   font-size: 1.8rem;
   align-self: center;
 `;
-
 
 const App = () => {
   const history = useHistory();
@@ -39,13 +39,19 @@ const App = () => {
       <StyledHeader>
         {localStorage.getItem('token') ? (
           <>
-            <StyledNavLink to='/dashboard' activeClassName='active-link'>Dashboard</StyledNavLink>
+            <StyledNavLink to='/dashboard' activeClassName='active-link'>
+              Dashboard
+            </StyledNavLink>
             <Button onClick={handleLogout}>Logout</Button>
           </>
         ) : (
           <>
-            <StyledNavLink to='/login' activeClassName='active-link'>Login</StyledNavLink>
-            <StyledNavLink to='/register' activeClassName='active-link'>Register</StyledNavLink>
+            <StyledNavLink to='/login' activeClassName='active-link'>
+              Login
+            </StyledNavLink>
+            <StyledNavLink to='/register' activeClassName='active-link'>
+              Register
+            </StyledNavLink>
           </>
         )}
       </StyledHeader>
@@ -58,6 +64,7 @@ const App = () => {
         ></PrivateRoute>
         <Route exact path='/new-board' component={NewBoard} />
         <Route exact path='/new-article' component={NewArticle} />
+        <Route exact path='/board/:id' component={Articles} />
         <Route exact path='/register' component={Register} />
         <Route exact path='/login' component={Login} />
       </Switch>

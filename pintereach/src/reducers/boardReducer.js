@@ -4,6 +4,7 @@ const initialState = {
   isLoading: false,
   boards: [],
   error: '',
+  message: '',
 };
 
 const boardReducer = (state = initialState, action) => {
@@ -40,6 +41,11 @@ const boardReducer = (state = initialState, action) => {
       return {
         ...state,
         error: action.payload,
+      };
+    case ACTIONS.DELETE_BOARD:
+      return {
+        ...state,
+        message: action.payload,
       };
     default:
       return state;
