@@ -1,8 +1,6 @@
 import styled from 'styled-components';
 
 const Button = styled.button`
-  width: 20%;
-  margin: 0 auto;
   margin-top: 2%;
   box-shadow: inset 0px 1px 0px 0px #cf866c;
   background: linear-gradient(to bottom, #d0451b 5%, #bc3315 100%);
