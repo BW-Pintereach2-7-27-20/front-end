@@ -8,9 +8,8 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import App from './App';
 import { rootReducer } from './reducers';
 import './index.css';
-import boardReducer from './reducers/boardReducer';
 
-const store = createStore(boardReducer, applyMiddleware(thunk));
+const store = createStore(rootReducer, applyMiddleware(thunk));
 
 ReactDOM.render(
   <Provider store={store}>

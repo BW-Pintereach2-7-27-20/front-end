@@ -99,6 +99,8 @@ header,
 hgroup,
 menu,
 nav,
+a,
+p,
 section {
 	display: block;
 }
@@ -133,12 +135,15 @@ table {
 /* CSS reset end */
 
 body {
-	display: flex;
-	justify-content: center;
 	background-image: url(./images/dummy-background.jpg);
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-attachment: fixed;
+}
+
+.App {
+	width: 80%;
+	margin: 0 auto;
 }
 
 .my-masonry-grid {
@@ -163,4 +168,5 @@ body {
 	background: white;
 	margin-bottom: 30px;
 	padding: 30px;
+
 }

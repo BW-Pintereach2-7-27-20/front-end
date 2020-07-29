@@ -9,7 +9,6 @@ const Container = styled.div`
   opacity: 95%;
 
   h2 {
-    width: 40%;
     align-self: center;
     font-size: 4rem;
     font-family: 'Roboto Slab', serif;

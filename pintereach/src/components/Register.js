@@ -18,16 +18,16 @@ const initialValue = {
 };
 
 const initialRegisterErrors = {
-  username: '', 
-  password: '', 
-}; 
+  username: '',
+  password: '',
+};
 
 const initialBtnDisable = true;
 
 const Register = (props) => {
   const [inputValue, setInputValue] = useState(initialValue);
-  const [registerErrors, setRegisterErrors] = useState(initialRegisterErrors); 
-  const [disabled, setDisabled] = useState(initialBtnDisable); 
+  const [registerErrors, setRegisterErrors] = useState(initialRegisterErrors);
+  const [disabled, setDisabled] = useState(initialBtnDisable);
 
   const onChange = (e) => {
     setInputValue({ ...inputValue, [e.target.name]: e.target.value });
@@ -47,26 +47,26 @@ const Register = (props) => {
   function validateChange(e) {
     e.persist();
     yup
-    .reach(registerSchema, e.target.name)
-    .validate(e.target.value)
-    .then(valid => {
+      .reach(registerSchema, e.target.name)
+      .validate(e.target.value)
+      .then((valid) => {
         setRegisterErrors({
           ...registerErrors,
           [e.target.name]: '',
-        })
-    })
-    .catch(err => {
-      setRegisterErrors({
-        ...registerErrors,
-        [e.target.name]: err.errors[0],
+        });
       })
-    })
+      .catch((err) => {
+        setRegisterErrors({
+          ...registerErrors,
+          [e.target.name]: err.errors[0],
+        });
+      });
   }
 
   useEffect(() => {
-    registerSchema.isValid(inputValue).then(valid => {
-      setDisabled(!valid)
-    })
+    registerSchema.isValid(inputValue).then((valid) => {
+      setDisabled(!valid);
+    });
   }, [inputValue]);
 
   return (
@@ -100,12 +100,11 @@ const Register = (props) => {
 
         <Button disabled={disabled}>Register</Button>
 
-      {/* rendering validation errors here */}
-      <div className='errors'>
+        {/* rendering validation errors here */}
+        <div className='errors'>
           <div>{registerErrors.username}</div>
           <div>{registerErrors.password}</div>
-      </div>
-
+        </div>
       </Form>
     </Container>
   );

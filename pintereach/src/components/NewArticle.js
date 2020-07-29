@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import formSchema from '../validation/formSchema';
 
 const initialNewArticle = {
@@ -8,25 +9,9 @@ const initialNewArticle = {
   host: '',
 };
 
-// will there be an error schema to adhere to? Checking to make sure a url is added?
-
-const initialFormErrors = {
-  url: '',
-};
-
-const initialInputErrors = {
-  url: '',
-};
-
-const initialBtnDisable = true;
-
-// useEffect: Logic: If the form schema is valid, then set the disabled button to 'not disabled'
-
 const NewArticle = (props) => {
   const [inputValue, setInputValue] = useState(initialNewArticle);
-  const [inputErrors, setInputErrors] = useState(initialInputErrors);
-  // button state, disabled until a url of 5 characters is supplied by user
-  const [disabled, setDisabled] = useState(initialBtnDisable);
+  const [disabled, setDisabled] = useState(true);
 
   const onChange = (e) => {
     setInputValue({ ...inputValue, [e.target.name]: e.target.value });

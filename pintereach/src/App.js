@@ -8,12 +8,12 @@ import Register from './components/Register';
 import PrivateRoute from './components/PrivateRoute';
 import NewBoard from './components/NewBoard.js';
 import NewArticle from './components/NewArticle.js';
+import Articles from './components/Articles.js';
 import styled from 'styled-components';
 
 const StyledHeader = styled.div`
   font-size: 2rem;
   display: flex;
-  width: 40%;
 `;
 
 const StyledLink = styled(Link)`
@@ -62,6 +62,7 @@ const App = () => {
         ></PrivateRoute>
         <Route exact path='/new-board' component={NewBoard} />
         <Route exact path='/new-article' component={NewArticle} />
+        <Route exact path='/boards/:id' component={Articles} />
         <Route exact path='/register' component={Register} />
         <Route exact path='/login' component={Login} />
       </Switch>
