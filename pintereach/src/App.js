@@ -1,5 +1,5 @@
 import React from 'react';
-import { Switch, Route, Link, useHistory } from 'react-router-dom';
+import { Switch, Route, Link, useHistory, NavLink } from 'react-router-dom';
 
 import './App.css';
 import Dashboard from './components/Dashboard';
@@ -10,24 +10,20 @@ import NewBoard from './components/NewBoard.js';
 import NewArticle from './components/NewArticle.js';
 import Articles from './components/Articles.js';
 import styled from 'styled-components';
+import Button from './styled/Button';
 
 const StyledHeader = styled.div`
-  font-size: 2rem;
   display: flex;
+  justify-content: space-between;
+  width: 100vw;
+  background-color: indianred;
 `;
 
-const StyledLink = styled(Link)`
+const StyledNavLink = styled(NavLink)`
   text-decoration: none;
-  color: indianred;
-  text-shadow: 2px 2px white;
-  font-weight: bold;
-  padding: 2%;
-
-  justify-content: space-between;
-
-  &:hover {
-    text-decoration: underline;
-  }
+  font-family: 'Roboto Slab', serif;
+  font-size: 1.8rem;
+  align-self: center;
 `;
 
 const App = () => {
@@ -40,16 +36,22 @@ const App = () => {
 
   return (
     <div className='App'>
-      <StyledHeader className='nav'>
+      <StyledHeader>
         {localStorage.getItem('token') ? (
           <>
-            <Link to='/dashboard'>Dashboard</Link>
-            <button onClick={handleLogout}>Logout</button>
+            <StyledNavLink to='/dashboard' activeClassName='active-link'>
+              Dashboard
+            </StyledNavLink>
+            <Button onClick={handleLogout}>Logout</Button>
           </>
         ) : (
           <>
-            <StyledLink to='/login'>Login</StyledLink>
-            <StyledLink to='/register'>Register</StyledLink>
+            <StyledNavLink to='/login' activeClassName='active-link'>
+              Login
+            </StyledNavLink>
+            <StyledNavLink to='/register' activeClassName='active-link'>
+              Register
+            </StyledNavLink>
           </>
         )}
       </StyledHeader>

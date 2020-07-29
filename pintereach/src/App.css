@@ -135,6 +135,9 @@ table {
 /* CSS reset end */
 
 body {
+	display: flex;
+	justify-content: center;
+	text-align: center;
 	background-image: url(./images/dummy-background.jpg);
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -168,15 +171,4 @@ body {
 	background: white;
 	margin-bottom: 30px;
 	padding: 30px;
-
-}
-
-.loading {
-	position: absolute;
-	top: 20px;
-	right: 20px;
-	padding: 15px 20px;
-	border-radius: 2px;
-	color: white;
-	background: rgba(0, 0, 0, 0.5);
 }
