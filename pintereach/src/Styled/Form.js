@@ -4,7 +4,6 @@ const Form = styled.form`
   display: flex;
   flex-direction: column;
   align-self: center;
-  width: 40%;
   padding: 5%;
 
   label {
