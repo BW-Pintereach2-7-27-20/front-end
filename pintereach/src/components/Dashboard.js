@@ -4,6 +4,11 @@ import { fetchBoards } from '../actions';
 import { Link } from 'react-router-dom';
 import Board from './Board';
 import Masonry from 'react-masonry-css';
+import styled from 'styled-components'; 
+
+const StyledCreateLink = styled(Link)`
+  text-decoration: none;
+`;
 
 const Dashboard = (props) => {
   console.log(props);
@@ -18,7 +23,7 @@ const Dashboard = (props) => {
 
   return (
     <div>
-      <Link to='/new-board'>Create new Board</Link>
+      <StyledCreateLink to='/new-board'>Create new Board</StyledCreateLink>
 
       {props.isLoading && <span className='loading'>Loading Boards...</span>}
       <Masonry
