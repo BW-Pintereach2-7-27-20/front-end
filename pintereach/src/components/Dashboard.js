@@ -13,7 +13,7 @@ const Dashboard = (props) => {
   }, [props.message]);
 
   const breakpointColumnsObj = {
-    default: 6,
+    default: 5,
     1100: 4,
   };
 

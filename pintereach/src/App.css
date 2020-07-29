@@ -161,7 +161,7 @@ body {
 }
 
 .my-masonry-grid_column {
-	padding-left: 30px;
+	padding: 20px;
 	/* gutter size */
 	background-clip: padding-box;
 }
