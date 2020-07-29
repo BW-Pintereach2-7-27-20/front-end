@@ -10,7 +10,6 @@ import NewBoard from './components/NewBoard.js';
 import NewArticle from './components/NewArticle.js';
 import Articles from './components/Articles.js';
 import styled from 'styled-components';
-import Button from './styled/Button';
 
 const StyledHeader = styled.div`
   display: flex;
@@ -22,8 +21,14 @@ const StyledHeader = styled.div`
 const StyledNavLink = styled(NavLink)`
   text-decoration: none;
   font-family: 'Roboto Slab', serif;
+  font-weight: bold;
   font-size: 1.8rem;
   align-self: center;
+  padding: 0.5%;
+
+  &:active {
+    color: white;
+  }
 `;
 
 const App = () => {
@@ -42,7 +47,7 @@ const App = () => {
             <StyledNavLink to='/dashboard' activeClassName='active-link'>
               Dashboard
             </StyledNavLink>
-            <Button onClick={handleLogout}>Logout</Button>
+            <button onClick={handleLogout}>Logout</button>
           </>
         ) : (
           <>

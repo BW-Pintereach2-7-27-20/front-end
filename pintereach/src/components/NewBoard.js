@@ -2,36 +2,8 @@ import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { postBoard } from '../actions';
 
-import styled from 'styled-components';
+import AddForm from '../styled/AddForm';
 import Button from '../styled/Button';
-
-const StyledBoardForm = styled.form`
-  display: flex;
-  flex-direction: column;
-  width: 20%;
-  margin: 0 auto;
-  margin-top: 2%;
-  padding: 1%;
-  background-color: lavenderblush;
-  -webkit-box-shadow: 18px 10px 29px 1px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: 18px 10px 29px 1px rgba(0, 0, 0, 0.75);
-  box-shadow: 18px 10px 29px 1px rgba(0, 0, 0, 0.75);
-
-  h4 {
-    font-size: 1.5rem;
-    font-family: 'Roboto Slab', serif;
-  }
-
-  input {
-    width: 80%;
-    margin: 0 auto;
-  }
-
-  .lrgInput {
-    height: 15vh;
-    margin-bottom: 2%;
-  }
-`;
 
 const initialState = {
   name: '',
@@ -54,7 +26,8 @@ const NewBoard = (props) => {
 
   return (
     <div>
-      <StyledBoardForm onSubmit={onSubmit}>
+      <AddForm onSubmit={onSubmit}>
+        <h3>Add a Board</h3>
         <h4>Board Name</h4>
         <input
           type='text'
@@ -74,7 +47,7 @@ const NewBoard = (props) => {
         />
 
         <Button>Submit</Button>
-      </StyledBoardForm>
+      </AddForm>
     </div>
   );
 };

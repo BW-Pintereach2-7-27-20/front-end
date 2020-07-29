@@ -4,6 +4,9 @@ import { fetchArticles, deleteBoard } from '../actions';
 import { Link } from 'react-router-dom';
 import Article from './Article';
 import Masonry from 'react-masonry-css';
+import CreateLink from '../styled/CreateLink';
+
+import { useParams } from 'react-router-dom';
 
 const Articles = (props) => {
   useEffect(() => {
@@ -24,9 +27,9 @@ const Articles = (props) => {
 
   return (
     <>
-      <Link to={`/board/${props.match.params.id}/new-article`}>
+      <CreateLink to={`/board/${props.match.params.id}/new-article`}>
         Create new Article
-      </Link>
+      </CreateLink>
       <button onClick={handleDelete}>Delete Board</button>
       <Masonry
         breakpointCols={breakpointColumnsObj}

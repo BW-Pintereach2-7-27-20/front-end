@@ -4,6 +4,7 @@ import { fetchBoards } from '../actions';
 import { Link } from 'react-router-dom';
 import Board from './Board';
 import Masonry from 'react-masonry-css';
+import CreateLink from '../styled/CreateLink'; 
 
 const Dashboard = (props) => {
   console.log(props);
@@ -18,7 +19,7 @@ const Dashboard = (props) => {
 
   return (
     <div>
-      <Link to='/new-board'>Create new Board</Link>
+      <CreateLink to='/new-board'>Create new Board</CreateLink>
 
       {props.isLoading && <span className='loading'>Loading Boards...</span>}
       <Masonry

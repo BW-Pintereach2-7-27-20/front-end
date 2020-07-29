@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { postArticle } from '../actions';
 import { connect } from 'react-redux';
 import formSchema from '../validation/formSchema';
+import AddForm from '../styled/AddForm';
+import Button from '../styled/Button';
 
 const initalValues = {
   url: '',
@@ -34,44 +36,53 @@ const NewArticle = (props) => {
 
   return (
     <div>
-      <h2>Add an Article</h2>
+      <AddForm className='articleForm'>
+        <h3>Add an Article</h3>
+        <form onSubmit={onSubmit} className='articleForm'>
+          <label htmlFor='url'>
+            <h4>URL</h4>
+          </label>
+          <input
+            type='text'
+            name='url'
+            placeholder='newarticle.com/info'
+            value={inputValue.url}
+            onChange={onChange}
+          />
+          <label htmlFor='title'>
+            <h4>Title</h4>
+          </label>
+          <input
+            type='text'
+            name='title'
+            placeholder='article title'
+            value={inputValue.title}
+            onChange={onChange}
+          />
+          <label htmlFor='author'>
+            <h4>Author</h4>
+          </label>
+          <input
+            type='text'
+            name='author'
+            placeholder='author name'
+            value={inputValue.author}
+            onChange={onChange}
+          />
+          <label htmlFor='host'>
+            <h4>Host</h4>
+          </label>
+          <input
+            type='text'
+            name='host'
+            placeholder='host'
+            value={inputValue.host}
+            onChange={onChange}
+          />
 
-      <form onSubmit={onSubmit} className='articleForm'>
-        <label htmlFor='url'>url:</label>
-        <input
-          type='text'
-          name='url'
-          placeholder='newarticle.com/info'
-          value={inputValue.url}
-          onChange={onChange}
-        />
-        <label htmlFor='title'>Title:</label>
-        <input
-          type='text'
-          name='title'
-          placeholder='article title'
-          value={inputValue.title}
-          onChange={onChange}
-        />
-        <label htmlFor='author'>Author:</label>
-        <input
-          type='text'
-          name='author'
-          placeholder='author name'
-          value={inputValue.author}
-          onChange={onChange}
-        />
-        <label htmlFor='host'>Host:</label>
-        <input
-          type='text'
-          name='host'
-          placeholder='host'
-          value={inputValue.host}
-          onChange={onChange}
-        />
-
-        <button disabled={disabled}>Submit</button>
-      </form>
+          <Button disabled={disabled}>Submit</Button>
+        </form>
+      </AddForm>
     </div>
   );
 };
