@@ -36,52 +36,51 @@ const NewArticle = (props) => {
 
   return (
     <div>
-      <AddForm className='articleForm'>
+      <AddForm className='articleForm' onSubmit={onSubmit}>
         <h3>Add an Article</h3>
-        <form onSubmit={onSubmit} className='articleForm'>
-          <label htmlFor='url'>
-            <h4>URL</h4>
-          </label>
-          <input
-            type='text'
-            name='url'
-            placeholder='newarticle.com/info'
-            value={inputValue.url}
-            onChange={onChange}
-          />
-          <label htmlFor='title'>
-            <h4>Title</h4>
-          </label>
-          <input
-            type='text'
-            name='title'
-            placeholder='article title'
-            value={inputValue.title}
-            onChange={onChange}
-          />
-          <label htmlFor='author'>
-            <h4>Author</h4>
-          </label>
-          <input
-            type='text'
-            name='author'
-            placeholder='author name'
-            value={inputValue.author}
-            onChange={onChange}
-          />
-          <label htmlFor='host'>
-            <h4>Host</h4>
-          </label>
-          <input
-            type='text'
-            name='host'
-            placeholder='host'
-            value={inputValue.host}
-            onChange={onChange}
-          />
 
-          <Button disabled={disabled}>Submit</Button>
-        </form>
+        <label htmlFor='url'>
+          <h4>URL</h4>
+        </label>
+        <input
+          type='text'
+          name='url'
+          placeholder='newarticle.com/info'
+          value={inputValue.url}
+          onChange={onChange}
+        />
+        <label htmlFor='title'>
+          <h4>Title</h4>
+        </label>
+        <input
+          type='text'
+          name='title'
+          placeholder='article title'
+          value={inputValue.title}
+          onChange={onChange}
+        />
+        <label htmlFor='author'>
+          <h4>Author</h4>
+        </label>
+        <input
+          type='text'
+          name='author'
+          placeholder='author name'
+          value={inputValue.author}
+          onChange={onChange}
+        />
+        <label htmlFor='host'>
+          <h4>Host</h4>
+        </label>
+        <input
+          type='text'
+          name='host'
+          placeholder='host'
+          value={inputValue.host}
+          onChange={onChange}
+        />
+
+        <Button disabled={disabled}>Submit</Button>
       </AddForm>
     </div>
   );
