@@ -7,8 +7,6 @@ import Article from './Article';
 import { useParams } from 'react-router-dom';
 
 const Articles = (props) => {
-  const { boardId } = useParams();
-
   useEffect(() => {
     props.fetchArticles();
   }, []);
@@ -16,7 +14,8 @@ const Articles = (props) => {
   const handleDelete = (e) => {
     e.preventDefault();
 
-    props.deleteBoard(boardId);
+    props.deleteBoard(props.match.params.id);
+    props.history.push('/dashboard');
   };
 
   return (

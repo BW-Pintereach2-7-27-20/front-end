@@ -33,7 +33,7 @@ export const postBoard = (content) => (dispatch) => {
     type: NEW_BOARD_START,
   });
   axiosWithAuth()
-    .post('/boards', content)
+    .post('/board', content)
     .then((res) => {
       dispatch({ type: NEW_BOARD_SUCCESS, payload: res.data });
     })

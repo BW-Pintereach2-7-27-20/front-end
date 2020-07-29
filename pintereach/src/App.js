@@ -62,7 +62,7 @@ const App = () => {
         ></PrivateRoute>
         <Route exact path='/new-board' component={NewBoard} />
         <Route exact path='/new-article' component={NewArticle} />
-        <Route exact path='/boards/:id' component={Articles} />
+        <Route exact path='/board/:id' component={Articles} />
         <Route exact path='/register' component={Register} />
         <Route exact path='/login' component={Login} />
       </Switch>
