@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { fetchArticles, deleteBoard } from '../actions';
 import { Link } from 'react-router-dom';
 import Article from './Article';
+import CreateLink from '../styled/CreateLink'; 
 
 import { useParams } from 'react-router-dom';
 
@@ -20,7 +21,7 @@ const Articles = (props) => {
 
   return (
     <>
-      <Link to='/new-article'>Create new Article</Link>
+      <CreateLink to='/new-article'>Create new Article</CreateLink>
       <button onClick={handleDelete}>Delete Board</button>
       {props.articles?.map((article) => (
         <Article article={article} />

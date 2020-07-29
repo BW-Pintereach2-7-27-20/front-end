@@ -10,7 +10,6 @@ import NewBoard from './components/NewBoard.js';
 import NewArticle from './components/NewArticle.js';
 import Articles from './components/Articles.js';
 import styled from 'styled-components';
-import Button from './styled/Button';
 
 const StyledHeader = styled.div`
   display: flex;

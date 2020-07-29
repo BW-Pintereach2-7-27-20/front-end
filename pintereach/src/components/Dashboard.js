@@ -4,25 +4,7 @@ import { fetchBoards } from '../actions';
 import { Link } from 'react-router-dom';
 import Board from './Board';
 import Masonry from 'react-masonry-css';
-import styled from 'styled-components'; 
-
-const StyledCreateLink = styled(Link)`
-  color: indianred;
-  font-family: 'Roboto Slab', serif;
-  font-weight: bold;
-  text-decoration: none;
-  border: 1px solid white;
-  width: 10vw;
-  line-height: 2rem;
-  margin-top: 1%;
-  margin-bottom: 1%;
-  margin-left: 2%;
-  background-color: lavenderblush;
-  border-radius: 5%;
-  -webkit-box-shadow: 18px 10px 29px 1px rgba(0,0,0,0.75);
-  -moz-box-shadow: 18px 10px 29px 1px rgba(0,0,0,0.75);
-  box-shadow: 18px 10px 29px 1px rgba(0,0,0,0.75);
-`;
+import CreateLink from '../styled/CreateLink'; 
 
 const Dashboard = (props) => {
   console.log(props);
@@ -37,7 +19,7 @@ const Dashboard = (props) => {
 
   return (
     <div>
-      <StyledCreateLink to='/new-board'>Create new Board</StyledCreateLink>
+      <CreateLink to='/new-board'>Create new Board</CreateLink>
 
       {props.isLoading && <span className='loading'>Loading Boards...</span>}
       <Masonry
