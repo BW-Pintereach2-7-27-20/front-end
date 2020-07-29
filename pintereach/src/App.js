@@ -9,6 +9,7 @@ import PrivateRoute from './components/PrivateRoute';
 import NewBoard from './components/NewBoard.js';
 import NewArticle from './components/NewArticle.js';
 import styled from 'styled-components';
+import Button from './styled/Button'; 
 
 const StyledHeader = styled.div`
   display: flex;
@@ -19,6 +20,9 @@ const StyledHeader = styled.div`
 
 const StyledNavLink = styled(NavLink)`
   text-decoration: none; 
+  font-family: 'Roboto Slab', serif;
+  font-size: 1.8rem;
+  align-self: center;
 `;
 
 
@@ -36,7 +40,7 @@ const App = () => {
         {localStorage.getItem('token') ? (
           <>
             <StyledNavLink to='/dashboard' activeClassName='active-link'>Dashboard</StyledNavLink>
-            <button onClick={handleLogout}>Logout</button>
+            <Button onClick={handleLogout}>Logout</Button>
           </>
         ) : (
           <>
