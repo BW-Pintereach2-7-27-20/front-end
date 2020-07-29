@@ -9,7 +9,7 @@ const Dashboard = (props) => {
   console.log(props);
   useEffect(() => {
     props.fetchBoards();
-  }, []);
+  }, [props.message]);
 
   const breakpointColumnsObj = {
     default: 6,
@@ -40,6 +40,7 @@ const mapStateToProps = (state) => {
   return {
     isLoading: state.board.isLoading,
     boards: state.board.boards,
+    message: state.board.message,
   };
 };
 
