@@ -48,7 +48,7 @@ const App = () => {
             <StyledNavLink to='/dashboard' activeClassName='active-link'>
               Dashboard
             </StyledNavLink>
-            <Button onClick={handleLogout}>Logout</Button>
+            <button onClick={handleLogout}>Logout</button>
           </>
         ) : (
           <>

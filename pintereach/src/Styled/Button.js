@@ -10,6 +10,7 @@ const Button = styled.button`
   color: #ffffff;
   font-family: Arial;
   font-size: 1.3rem;
+  margin-top: 2%;
   padding: 6px 24px;
   text-decoration: none;
   text-shadow: 0px 1px 0px #854629;
@@ -17,6 +18,12 @@ const Button = styled.button`
   &:hover {
     color: black; 
   }
+
+  &:disabled, 
+  button[disabled] {
+    background: linear-gradient(to bottom, #D3D3D3 5%, #A9A9A9 100%);
+  }
 `;
 
 export default Button;
+
