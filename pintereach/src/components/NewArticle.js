@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { postArticle } from '../actions';
+import { connect } from 'react-redux';
 import formSchema from '../validation/formSchema';
 
-const initialNewArticle = {
+const initalValues = {
   url: '',
   title: '',
   author: '',
@@ -10,11 +11,19 @@ const initialNewArticle = {
 };
 
 const NewArticle = (props) => {
-  const [inputValue, setInputValue] = useState(initialNewArticle);
   const [disabled, setDisabled] = useState(true);
+
+  const [inputValue, setInputValue] = useState(initalValues);
 
   const onChange = (e) => {
     setInputValue({ ...inputValue, [e.target.name]: e.target.value });
+  };
+
+  const onSubmit = (e) => {
+    e.preventDefault();
+
+    props.postArticle(inputValue, props.match.params.id);
+    props.history.push(`/board/${props.match.params.id}`);
   };
 
   useEffect(() => {
@@ -27,7 +36,7 @@ const NewArticle = (props) => {
     <div>
       <h2>Add an Article</h2>
 
-      <form className='articleForm'>
+      <form onSubmit={onSubmit} className='articleForm'>
         <label htmlFor='url'>url:</label>
         <input
           type='text'
@@ -67,4 +76,4 @@ const NewArticle = (props) => {
   );
 };
 
-export default NewArticle;
+export default connect(null, { postArticle })(NewArticle);

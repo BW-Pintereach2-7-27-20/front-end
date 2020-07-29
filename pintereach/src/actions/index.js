@@ -14,6 +14,12 @@ export const FETCH_ARTICLES_ERROR = 'FETCH_ARTICLES_ERROR';
 
 export const DELETE_BOARD = 'DELETE_BOARD';
 
+export const SELECT_BOARD = 'SELECT_BOARD';
+
+export const selectBoard = (boardId) => (dispatch) => {
+  dispatch({ type: SELECT_BOARD, payload: boardId });
+};
+
 export const fetchBoards = () => (dispatch) => {
   dispatch({
     type: FETCH_BOARDS_START,
@@ -21,6 +27,7 @@ export const fetchBoards = () => (dispatch) => {
   axiosWithAuth()
     .get('/boards')
     .then((res) => {
+      console.log(res);
       dispatch({ type: FETCH_BOARDS_SUCCESS, payload: res.data });
     })
     .catch((err) => {
@@ -42,14 +49,22 @@ export const postBoard = (content) => (dispatch) => {
     });
 };
 
-export const fetchArticles = () => (dispatch) => {
+export const deleteBoard = (boardId) => (dispatch) => {
+  axiosWithAuth()
+    .delete(`/boards/${boardId}`)
+    .then((res) => {
+      dispatch({ type: DELETE_BOARD, payload: res.data });
+    });
+};
+
+export const fetchArticles = (boardId) => (dispatch) => {
   dispatch({
     type: FETCH_ARTICLES_START,
   });
   axiosWithAuth()
-    .get('/articles', { params: { board_id: 7 } })
+    .get(`/articles/from/${boardId}`)
     .then((res) => {
-      console.log('console log for articles: ', res);
+      console.log(res);
       dispatch({ type: FETCH_ARTICLES_SUCCESS, payload: res.data });
     })
     .catch((err) => {
@@ -57,11 +72,13 @@ export const fetchArticles = () => (dispatch) => {
     });
 };
 
-export const deleteBoard = (boardId) => (dispatch) => {
+export const postArticle = (values, boardId) => (dispatch) => {
   axiosWithAuth()
-    .delete(`/boards/${boardId}`)
+    .post(`/articles`, { ...values, board_id: boardId })
     .then((res) => {
-      console.log(res);
-      dispatch({ type: DELETE_BOARD, payload: res.data });
+      dispatch({ type: FETCH_ARTICLES_SUCCESS, payload: res.data });
+    })
+    .catch((err) => {
+      dispatch({ type: FETCH_ARTICLES_ERROR, payload: err.message });
     });
 };

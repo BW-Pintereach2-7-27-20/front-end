@@ -1,5 +1,5 @@
 import React from 'react';
-import { Switch, Route, Link, useHistory, NavLink } from 'react-router-dom';
+import { Switch, Route, useHistory, NavLink } from 'react-router-dom';
 
 import './App.css';
 import Dashboard from './components/Dashboard';
@@ -63,7 +63,7 @@ const App = () => {
           component={Dashboard}
         ></PrivateRoute>
         <Route exact path='/new-board' component={NewBoard} />
-        <Route exact path='/new-article' component={NewArticle} />
+        <Route exact path='/board/:id/new-article' component={NewArticle} />
         <Route exact path='/board/:id' component={Articles} />
         <Route exact path='/register' component={Register} />
         <Route exact path='/login' component={Login} />
