@@ -22,8 +22,14 @@ const StyledHeader = styled.div`
 const StyledNavLink = styled(NavLink)`
   text-decoration: none;
   font-family: 'Roboto Slab', serif;
+  font-weight: bold;
   font-size: 1.8rem;
   align-self: center;
+  padding: 0.5%;
+
+  &:active {
+    color: white;
+  }
 `;
 
 const App = () => {
