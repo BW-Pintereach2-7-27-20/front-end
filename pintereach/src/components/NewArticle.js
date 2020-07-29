@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import formSchema from '../validation/formSchema';
+import AddForm from '../styled/AddForm'; 
+import Button from '../styled/Button'; 
 
 const initialNewArticle = {
   url: '',
@@ -25,10 +27,11 @@ const NewArticle = (props) => {
 
   return (
     <div>
-      <h2>Add an Article</h2>
-
-      <form className='articleForm'>
-        <label htmlFor='url'>url:</label>
+      <AddForm className='articleForm'>
+        <h3>Add an Article</h3>
+        <label htmlFor='url'>
+          <h4>URL</h4>
+          </label>
         <input
           type='text'
           name='url'
@@ -36,7 +39,9 @@ const NewArticle = (props) => {
           value={inputValue.url}
           onChange={onChange}
         />
-        <label htmlFor='title'>Title:</label>
+        <label htmlFor='title'>
+          <h4>Title</h4>
+          </label>
         <input
           type='text'
           name='title'
@@ -44,7 +49,9 @@ const NewArticle = (props) => {
           value={inputValue.title}
           onChange={onChange}
         />
-        <label htmlFor='author'>Author:</label>
+        <label htmlFor='author'>
+          <h4>Author</h4>
+          </label>
         <input
           type='text'
           name='author'
@@ -52,7 +59,9 @@ const NewArticle = (props) => {
           value={inputValue.author}
           onChange={onChange}
         />
-        <label htmlFor='host'>Host:</label>
+        <label htmlFor='host'>
+          <h4>Host</h4>
+          </label>
         <input
           type='text'
           name='host'
@@ -61,8 +70,8 @@ const NewArticle = (props) => {
           onChange={onChange}
         />
 
-        <button disabled={disabled}>Submit</button>
-      </form>
+        <Button disabled={disabled}>Submit</Button>
+      </AddForm>
     </div>
   );
 };
