@@ -61,7 +61,6 @@ export const deleteBoard = (boardId) => (dispatch) => {
   axiosWithAuth()
     .delete(`/boards/${boardId}`)
     .then((res) => {
-      console.log(res);
-      // dispatch({ type: DELETE_BOARD, payload: res });
+      dispatch({ type: DELETE_BOARD, payload: res.data });
     });
 };

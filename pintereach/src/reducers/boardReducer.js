@@ -4,7 +4,7 @@ const initialState = {
   isLoading: false,
   boards: [],
   error: '',
-  articles: [],
+  message: '',
 };
 
 const boardReducer = (state = initialState, action) => {
@@ -42,21 +42,10 @@ const boardReducer = (state = initialState, action) => {
         ...state,
         error: action.payload,
       };
-    case ACTIONS.FETCH_ARTICLES_START:
+    case ACTIONS.DELETE_BOARD:
       return {
         ...state,
-        isLoading: true,
-      };
-    case ACTIONS.FETCH_ARTICLES_SUCCESS:
-      return {
-        ...state,
-        isLoading: false,
-        articles: action.payload,
-      };
-    case ACTIONS.FETCH_ARTICLES_ERROR:
-      return {
-        ...state,
-        error: action.payload,
+        message: action.payload,
       };
     default:
       return state;

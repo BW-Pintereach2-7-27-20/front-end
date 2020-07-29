@@ -20,7 +20,7 @@ const Dashboard = (props) => {
     <div>
       <Link to='/new-board'>Create new Board</Link>
 
-      {props.isLoading && <span>Loading Boards...</span>}
+      {props.isLoading && <span className='loading'>Loading Boards...</span>}
       <Masonry
         breakpointCols={breakpointColumnsObj}
         className='my-masonry-grid'
