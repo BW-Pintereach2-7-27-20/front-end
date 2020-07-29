@@ -3,7 +3,6 @@ import * as ACTIONS from '../actions';
 const initialState = {
   isLoading: false,
   boards: [],
-  newBoard: {},
   error: '',
 };
 

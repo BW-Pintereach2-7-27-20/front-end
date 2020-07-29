@@ -35,6 +35,7 @@ const Dashboard = (props) => {
   }, []);
 
   return (
+<<<<<<< HEAD
     <StyledContainer>
       <StyledDiv>
         <h2>Board Title</h2>
@@ -50,6 +51,21 @@ const Dashboard = (props) => {
       {props.isLoading && <span>Loading Boards...</span>}
       {console.log(props.isLoading)}
     </StyledContainer>
+=======
+    <div>
+      <Link to='/new-board'>Create new Board</Link>
+      {props.isLoading && <span>Loading Boards...</span>}
+      {props.boards &&
+        props.boards.map((board) => (
+          <div className='board-wrapper'>
+            <Link to={`/boards/${board.id}`} key={board.id}>
+              <h2>{board.name}</h2>
+            </Link>
+            <p>{board.description}</p>
+          </div>
+        ))}
+    </div>
+>>>>>>> 5f138ffaf7ae1809a20ff7550c99f9372e2c9b6e
   );
 };
 

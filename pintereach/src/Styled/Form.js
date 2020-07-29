@@ -1,4 +1,4 @@
-import styled from 'styled-components'; 
+import styled from 'styled-components';
 
 const Form = styled.form`
   display: flex;
@@ -23,4 +23,4 @@ const Form = styled.form`
   }
 `;
 
-export default Form; 
+export default Form;

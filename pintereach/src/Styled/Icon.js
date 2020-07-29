@@ -1,8 +1,8 @@
-import styled from 'styled-components'; 
+import styled from 'styled-components';
 
 const Icon = styled.img`
-    height: 3vh;
-    padding: .5%;
+  height: 3vh;
+  padding: 0.5%;
 `;
 
-export default Icon; 
+export default Icon;
