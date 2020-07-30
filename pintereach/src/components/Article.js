@@ -10,6 +10,7 @@ const ContentWrapper = styled.div`
   line-height: 125%;
 
   p {
+    font-size: .8rem;
     margin-top: 1%;
     margin-bottom: 1%;
   }
@@ -22,6 +23,9 @@ const ContentWrapper = styled.div`
   }
 
   .url {
+    font-size: 1.0rem;
+    color: indianred;
+    font-weight: bold;
     margin-bottom: 5%;
   }
 `
@@ -33,7 +37,7 @@ const Article = (props) => {
       <ContentWrapper>
       <p className='title'>{props.article.title}</p>
       <hr />
-      <p>{props.article.author}</p>
+      <p>By: {props.article.author}</p>
       <p className='url'><a href={props.article.url}>{props.article.title}</a></p>
       <Link to={`/article/${props.article.id}/edit`}>Edit</Link>
       <button onClick={() => props.deleteArticle(props.article.id)}>
