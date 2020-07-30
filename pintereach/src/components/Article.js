@@ -39,7 +39,7 @@ const Article = (props) => {
       <p className='title'>{props.article.title}</p>
       <hr />
       <p>By: {props.article.author}</p>
-      <p className='url'><a href={props.article.url}>{props.article.title}</a></p>
+      <p className='url'>{props.article.url}</p>
       <Link to={`/article/${props.article.id}/edit`}>Edit</Link>
       <button onClick={() => props.deleteArticle(props.article.id)}>
         Delete
