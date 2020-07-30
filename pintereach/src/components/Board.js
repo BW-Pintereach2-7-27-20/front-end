@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
+
 import styled from 'styled-components'; 
 
 const StyledLink = styled(Link)`
@@ -16,14 +17,19 @@ const StyledLink = styled(Link)`
     }
 `;
 
+import { connect } from 'react-redux';
+import { selectBoard } from '../actions';
+
+
 
 const Board = ({ board }) => {
   return (
     <div className='board-wrapper'>
-      <StyledLink to={`/board/${board.id}`}>{board.name}</StyledLink>
+
+      <StyledLink to={`/board/${board.id}`} onClick={() => selectBoard(board.id)}>{board.name}</StyledLink>
       <p>{board.description}</p>
     </div>
   );
 };
 
-export default Board;
+export default connect(null, { selectBoard })(Board);
