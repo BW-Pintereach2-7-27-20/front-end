@@ -17,6 +17,7 @@ const ContentWrapper = styled.div`
   
   .title {
     color: indianred;
+    text-transform: capitalize;
     font-family: 'Roboto Slab', serif;
     font-weight: bold;
     font-size: 1.2rem; 
