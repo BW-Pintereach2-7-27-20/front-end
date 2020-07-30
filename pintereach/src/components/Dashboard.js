@@ -1,19 +1,20 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { fetchBoards } from '../actions';
-import { Link } from 'react-router-dom';
 import Board from './Board';
 import Masonry from 'react-masonry-css';
 import CreateLink from '../styled/CreateLink'; 
 
 const Dashboard = (props) => {
-  console.log(props);
+  const { fetchBoards, isLoading, message} = props,
+        boards = Array.isArray(props.boards) ? props.boards : [];
+  
   useEffect(() => {
-    props.fetchBoards();
-  }, [props.message]);
+    fetchBoards();
+  }, [fetchBoards, message]);
 
   const breakpointColumnsObj = {
-    default: 6,
+    default: 5,
     1100: 4,
   };
 
@@ -21,14 +22,14 @@ const Dashboard = (props) => {
     <div>
       <CreateLink to='/new-board'>Create new Board</CreateLink>
 
-      {props.isLoading && <span className='loading'>Loading Boards...</span>}
+      {isLoading && <span className='loading'>Loading Boards...</span>}
       <Masonry
         breakpointCols={breakpointColumnsObj}
         className='my-masonry-grid'
         columnClassName='my-masonry-grid_column'
       >
-        {props.boards ? (
-          props.boards.map((board) => <Board key={board.id} board={board} />)
+        {boards ? (
+          boards.map((board) => <Board key={board.id} board={board} />)
         ) : (
           <span>no boards here</span>
         )}

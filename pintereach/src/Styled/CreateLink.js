@@ -13,10 +13,10 @@ const CreateLink = styled(Link)`
   margin-bottom: 1%;
   margin-left: 2%;
   background-color: lavenderblush;
-  border-radius: 5%;
   -webkit-box-shadow: 18px 10px 29px 1px rgba(0,0,0,0.75);
   -moz-box-shadow: 18px 10px 29px 1px rgba(0,0,0,0.75);
   box-shadow: 18px 10px 29px 1px rgba(0,0,0,0.75);
+   
 `;
 
 export default CreateLink; 
