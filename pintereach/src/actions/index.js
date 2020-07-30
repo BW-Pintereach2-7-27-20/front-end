@@ -12,6 +12,8 @@ export const FETCH_ARTICLES_START = 'FETCH_ARTICLES_START';
 export const FETCH_ARTICLES_SUCCESS = 'FETCH_ARTICLES_SUCCESS';
 export const FETCH_ARTICLES_ERROR = 'FETCH_ARTICLES_ERROR';
 
+export const CREATE_ARTICLE = 'CREATE_ARTICLE';
+
 export const DELETE_BOARD = 'DELETE_BOARD';
 
 export const SELECT_BOARD = 'SELECT_BOARD';
@@ -76,9 +78,6 @@ export const postArticle = (values, boardId) => (dispatch) => {
   axiosWithAuth()
     .post(`/articles`, { ...values, board_id: boardId })
     .then((res) => {
-      dispatch({ type: FETCH_ARTICLES_SUCCESS, payload: res.data });
-    })
-    .catch((err) => {
-      dispatch({ type: FETCH_ARTICLES_ERROR, payload: err.message });
+      dispatch({ type: CREATE_ARTICLE, payload: res.data });
     });
 };

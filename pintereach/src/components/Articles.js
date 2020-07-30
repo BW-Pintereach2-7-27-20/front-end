@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { fetchArticles, deleteBoard } from '../actions';
-import { Link } from 'react-router-dom';
 import Article from './Article';
 import Masonry from 'react-masonry-css';
 import CreateLink from '../styled/CreateLink';
@@ -26,6 +25,8 @@ const Articles = (props) => {
     props.history.push('/dashboard');
   };
 
+  console.log(props.articles);
+
   return (
     <>
       <CreateLink to={`/board/${props.match.params.id}/new-article`}>
@@ -37,21 +38,10 @@ const Articles = (props) => {
         className='my-masonry-grid'
         columnClassName='my-masonry-grid_column'
       >
-        {props.articles ? (
+        {props.articles &&
           props.articles.map((article) => (
             <Article key={article.id} article={article} />
-          ))
-        ) : (
-          <></>
-        )}
-
-        {/* {Promise.all(
-          props.articles.map(async (item) => {
-            return await (<Article article={item} />);
-          })
-        ).then((completed) => {
-          return completed;
-        })} */}
+          ))}
       </Masonry>
     </>
   );
