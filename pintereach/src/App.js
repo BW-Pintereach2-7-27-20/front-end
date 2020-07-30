@@ -33,9 +33,6 @@ const StyledNavLink = styled(NavLink)`
   }
 `;
 
-
-
-
 const App = () => {
   const history = useHistory();
 
