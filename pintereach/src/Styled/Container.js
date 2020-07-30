@@ -15,7 +15,7 @@ const Container = styled.div`
 
   h2 {
     align-self: center;
-    font-size: 4rem;
+    font-size: 2rem;
     font-family: 'Roboto Slab', serif;
     font-weight: bold;
     color: indianred;
