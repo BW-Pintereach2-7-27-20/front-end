@@ -9,6 +9,7 @@ import PrivateRoute from './components/PrivateRoute';
 import NewBoard from './components/NewBoard.js';
 import NewArticle from './components/NewArticle.js';
 import Articles from './components/Articles.js';
+import EditArticle from './components/EditArticle.js';
 import styled from 'styled-components';
 
 const StyledHeader = styled.div`
@@ -70,6 +71,7 @@ const App = () => {
         <Route exact path='/new-board' component={NewBoard} />
         <Route exact path='/board/:id/new-article' component={NewArticle} />
         <Route exact path='/board/:id' component={Articles} />
+        <Route exact path='/article/:id/edit' component={EditArticle} />
         <Route exact path='/register' component={Register} />
         <Route exact path='/login' component={Login} />
       </Switch>

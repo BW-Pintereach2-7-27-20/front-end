@@ -25,8 +25,6 @@ const Articles = (props) => {
     props.history.push('/dashboard');
   };
 
-  console.log(props.articles);
-
   return (
     <>
       <CreateLink to={`/board/${props.match.params.id}/new-article`}>
