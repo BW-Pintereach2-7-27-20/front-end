@@ -25,6 +25,12 @@ const articleReducer = (state = initialState, action) => {
         ...state,
         error: action.payload,
       };
+    case ACTIONS.CREATE_ARTICLE:
+      return {
+        ...state,
+        isLoading: true,
+        articles: [...state.articles, action.payload],
+      };
     default:
       return state;
   }

@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { postArticle } from '../actions';
+import { connect } from 'react-redux';
 import formSchema from '../validation/formSchema';
-import AddForm from '../styled/AddForm'; 
-import Button from '../styled/Button'; 
+import AddForm from '../styled/AddForm';
+import Button from '../styled/Button';
 
-const initialNewArticle = {
+const initalValues = {
   url: '',
   title: '',
   author: '',
@@ -13,11 +14,19 @@ const initialNewArticle = {
 
 
 const NewArticle = (props) => {
-  const [inputValue, setInputValue] = useState(initialNewArticle);
   const [disabled, setDisabled] = useState(true);
+
+  const [inputValue, setInputValue] = useState(initalValues);
 
   const onChange = (e) => {
     setInputValue({ ...inputValue, [e.target.name]: e.target.value });
+  };
+
+  const onSubmit = (e) => {
+    e.preventDefault();
+
+    props.postArticle(inputValue, props.match.params.id);
+    props.history.push(`/board/${props.match.params.id}`);
   };
 
   useEffect(() => {
@@ -28,11 +37,12 @@ const NewArticle = (props) => {
 
   return (
     <div>
-      <AddForm className='articleForm'>
-        <h3>Add an Article</h3>
+      <AddForm className='articleForm' onSubmit={onSubmit}>
+        <h3 onSubmit={onSubmit}>Add an Article</h3>
+
         <label htmlFor='url'>
           <h4>URL</h4>
-          </label>
+        </label>
         <input
           type='text'
           name='url'
@@ -42,7 +52,7 @@ const NewArticle = (props) => {
         />
         <label htmlFor='title'>
           <h4>Title</h4>
-          </label>
+        </label>
         <input
           type='text'
           name='title'
@@ -52,7 +62,7 @@ const NewArticle = (props) => {
         />
         <label htmlFor='author'>
           <h4>Author</h4>
-          </label>
+        </label>
         <input
           type='text'
           name='author'
@@ -62,7 +72,7 @@ const NewArticle = (props) => {
         />
         <label htmlFor='host'>
           <h4>Host</h4>
-          </label>
+        </label>
         <input
           type='text'
           name='host'
@@ -77,4 +87,4 @@ const NewArticle = (props) => {
   );
 };
 
-export default NewArticle;
+export default connect(null, { postArticle })(NewArticle);
