@@ -22,7 +22,7 @@ const StyledDescrip = styled.p`
   font-family: serif;
   margin-top: 1%;
   text-align: left;
-`
+`;
 
 const Board = ({ board }) => {
   return (
