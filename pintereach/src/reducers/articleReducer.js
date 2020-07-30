@@ -5,6 +5,7 @@ const initialState = {
   error: '',
   message: '',
   articles: [],
+  article: {},
 };
 
 const articleReducer = (state = initialState, action) => {
@@ -29,6 +30,13 @@ const articleReducer = (state = initialState, action) => {
       return {
         ...state,
         isLoading: true,
+        articles: [...state.articles, action.payload],
+      };
+
+    case ACTIONS.FETCH_ARTICLE_SUCCESS:
+      return {
+        ...state,
+        article: action.payload,
         articles: [...state.articles, action.payload],
       };
     default:
