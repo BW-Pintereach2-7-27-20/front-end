@@ -12,8 +12,14 @@ import Articles from './components/Articles.js';
 import styled from 'styled-components';
 
 const StyledLogout = styled.button`
-  background-color: white;
-  font-size: 1.2rem;
+  border: none;
+  background-color: transparent;
+  font-family: inherit;
+  padding: 0;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 `; 
 
 const StyledHeader = styled.div`

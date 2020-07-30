@@ -133,6 +133,9 @@ table {
 }
 
 /* CSS reset end */
+* {
+	box-sizing: border-box;
+  }
 
 body {
 	display: flex;
