@@ -169,6 +169,7 @@ body {
 	-webkit-box-shadow: 18px 10px 29px 1px rgba(0, 0, 0, 0.75);
 	-moz-box-shadow: 18px 10px 29px 1px rgba(0, 0, 0, 0.75);
 	box-shadow: 18px 10px 29px 1px rgba(0, 0, 0, 0.75);
+	overflow-wrap: break-word;
 }
 
 .loading {

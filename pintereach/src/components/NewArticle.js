@@ -37,7 +37,7 @@ const NewArticle = (props) => {
   return (
     <div>
       <AddForm className='articleForm' onSubmit={onSubmit}>
-        <h3>Add an Article</h3>
+        <h3 onSubmit={onSubmit}>Add an Article</h3>
 
         <label htmlFor='url'>
           <h4>URL</h4>

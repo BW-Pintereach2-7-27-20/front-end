@@ -12,6 +12,7 @@ const Articles = (props) => {
   useEffect(() => {
     props.fetchArticles(props.match.params.id);
   }, []);
+  useEffect(() => {}, [props.articles]);
 
   const breakpointColumnsObj = {
     default: 6,
@@ -36,9 +37,21 @@ const Articles = (props) => {
         className='my-masonry-grid'
         columnClassName='my-masonry-grid_column'
       >
-        {props.articles?.map((article) => (
-          <Article article={article} />
-        ))}
+        {props.articles ? (
+          props.articles.map((article) => (
+            <Article key={article.id} article={article} />
+          ))
+        ) : (
+          <></>
+        )}
+
+        {/* {Promise.all(
+          props.articles.map(async (item) => {
+            return await (<Article article={item} />);
+          })
+        ).then((completed) => {
+          return completed;
+        })} */}
       </Masonry>
     </>
   );
