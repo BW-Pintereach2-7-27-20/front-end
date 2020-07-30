@@ -7,6 +7,6 @@ export const axiosWithAuth = () => {
     headers: {
       Authorization: token,
     },
-    baseURL: 'https://pintereachapi.herokuapp.com',
+    baseURL: 'https://pintereachapi-dev.herokuapp.com/',
   });
 };

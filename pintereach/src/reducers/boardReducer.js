@@ -5,6 +5,7 @@ const initialState = {
   boards: [],
   error: '',
   message: '',
+  currentBoard: '',
 };
 
 const boardReducer = (state = initialState, action) => {
@@ -46,6 +47,11 @@ const boardReducer = (state = initialState, action) => {
       return {
         ...state,
         message: action.payload,
+      };
+    case ACTIONS.SELECT_BOARD:
+      return {
+        ...state,
+        currentBoard: action.payload,
       };
     default:
       return state;

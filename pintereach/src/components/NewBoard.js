@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { postBoard } from '../actions';
 
-import AddForm from '../styled/AddForm';  
+import AddForm from '../styled/AddForm';
 import Button from '../styled/Button';
 
 const initialState = {
@@ -26,9 +26,9 @@ const NewBoard = (props) => {
 
   return (
     <div>
-      <AddForm onSubmit={onSubmit}> 
-      <h3>Add a Board</h3>
-      <h4>Board Name</h4>
+      <AddForm onSubmit={onSubmit}>
+        <h3>Add a Board</h3>
+        <h4>Board Name</h4>
         <input
           type='text'
           placeholder='name'
