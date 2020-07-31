@@ -6,6 +6,7 @@ const CreateLink = styled(Link)`
   font-family: 'Roboto Slab', serif;
   font-weight: bold;
   text-decoration: none;
+  text-align: center;
   border: 1px solid white;
   width: 10vw;
   line-height: 2rem;
