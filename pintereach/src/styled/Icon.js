@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from './node_modules/styled-components';
 
 const Icon = styled.img`
   height: 2vh;

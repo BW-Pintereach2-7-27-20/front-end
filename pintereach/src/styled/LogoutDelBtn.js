@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from './node_modules/styled-components';
 
 const LogoutDelBtn = styled.button`
   background: linear-gradient(to bottom, #e93f3f 5%, #cb0039 100%);

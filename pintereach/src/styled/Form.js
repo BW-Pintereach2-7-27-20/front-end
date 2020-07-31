@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from './node_modules/styled-components';
 
 const Form = styled.form`
   display: flex;
@@ -6,7 +6,6 @@ const Form = styled.form`
   align-self: center;
   padding-left: 5%;
   border-left: 1px solid grey;
-  
 
   label {
     font-size: 1.2rem;
