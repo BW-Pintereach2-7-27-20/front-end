@@ -3,11 +3,9 @@ import { connect } from 'react-redux';
 import { fetchArticles, deleteBoard } from '../actions';
 import Article from './Article';
 import Masonry from 'react-masonry-css';
+import styled from 'styled-components';
 import CreateLink from '../styled/CreateLink';
 import LogoutDelBtn from '../styled/LogoutDelBtn';
-import styled from 'styled-components';
-
-import { useParams } from 'react-router-dom';
 
 const StyledWrapper = styled.div`
   display: flex;
