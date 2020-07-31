@@ -9,9 +9,9 @@ const Container = styled.div`
   margin-top: 5%;
   background-color: lavenderblush;
   opacity: 95%;
-  -webkit-box-shadow: 18px 10px 29px 1px rgba(0,0,0,0.75);
-  -moz-box-shadow: 18px 10px 29px 1px rgba(0,0,0,0.75);
-  box-shadow: 18px 10px 29px 1px rgba(0,0,0,0.75);
+  -webkit-box-shadow: 18px 10px 29px 1px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 18px 10px 29px 1px rgba(0, 0, 0, 0.75);
+  box-shadow: 18px 10px 29px 1px rgba(0, 0, 0, 0.75);
 
   h2 {
     align-self: center;

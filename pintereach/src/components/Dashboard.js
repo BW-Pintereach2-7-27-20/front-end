@@ -3,12 +3,12 @@ import { connect } from 'react-redux';
 import { fetchBoards } from '../actions';
 import Board from './Board';
 import Masonry from 'react-masonry-css';
-import CreateLink from '../styled/CreateLink'; 
+import CreateLink from '../styled/CreateLink';
 
 const Dashboard = (props) => {
-  const { fetchBoards, isLoading, message} = props,
-        boards = Array.isArray(props.boards) ? props.boards : [];
-  
+  const { fetchBoards, isLoading, message } = props,
+    boards = Array.isArray(props.boards) ? props.boards : [];
+
   useEffect(() => {
     fetchBoards();
   }, [fetchBoards, message]);

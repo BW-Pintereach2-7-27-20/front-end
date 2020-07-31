@@ -16,14 +16,13 @@ const Button = styled.button`
   text-shadow: 0px 1px 0px #854629;
 
   &:hover {
-    color: black; 
+    color: black;
   }
 
-  &:disabled, 
+  &:disabled,
   button[disabled] {
-    background: linear-gradient(to bottom, #D3D3D3 5%, #A9A9A9 100%);
+    background: linear-gradient(to bottom, #d3d3d3 5%, #a9a9a9 100%);
   }
 `;
 
 export default Button;
-

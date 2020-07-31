@@ -100,7 +100,9 @@ const Register = (props) => {
           onChange={onChange}
         />
 
-        <Button className='registerBtn' disabled={disabled}>Register</Button>
+        <Button className='registerBtn' disabled={disabled}>
+          Register
+        </Button>
 
         {/* rendering validation errors here */}
         <div className='errors'>

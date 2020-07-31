@@ -1,5 +1,5 @@
-import styled from 'styled-components'; 
-import { Link } from 'react-router-dom'; 
+import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 const CreateLink = styled(Link)`
   color: indianred;
@@ -14,10 +14,9 @@ const CreateLink = styled(Link)`
   margin-bottom: 1%;
   margin-left: 2%;
   background-color: lavenderblush;
-  -webkit-box-shadow: 18px 10px 29px 1px rgba(0,0,0,0.75);
-  -moz-box-shadow: 18px 10px 29px 1px rgba(0,0,0,0.75);
-  box-shadow: 18px 10px 29px 1px rgba(0,0,0,0.75);
-   
+  -webkit-box-shadow: 18px 10px 29px 1px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 18px 10px 29px 1px rgba(0, 0, 0, 0.75);
+  box-shadow: 18px 10px 29px 1px rgba(0, 0, 0, 0.75);
 `;
 
-export default CreateLink; 
+export default CreateLink;

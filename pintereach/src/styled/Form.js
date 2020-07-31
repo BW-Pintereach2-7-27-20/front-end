@@ -6,7 +6,6 @@ const Form = styled.form`
   align-self: center;
   padding-left: 5%;
   border-left: 1px solid grey;
-  
 
   label {
     font-size: 1.2rem;
