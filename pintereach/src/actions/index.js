@@ -13,6 +13,7 @@ export const FETCH_ARTICLES_SUCCESS = 'FETCH_ARTICLES_SUCCESS';
 export const FETCH_ARTICLES_ERROR = 'FETCH_ARTICLES_ERROR';
 
 export const FETCH_ARTICLE_SUCCESS = 'FETCH_ARTICLE_SUCCESS';
+export const PATCH_ARTICLE_SUCCESS = 'PATCH_ARTICLE_SUCCESS';
 
 export const CREATE_ARTICLE = 'CREATE_ARTICLE';
 
@@ -31,7 +32,6 @@ export const fetchBoards = () => (dispatch) => {
   axiosWithAuth()
     .get('/boards')
     .then((res) => {
-      console.log(res);
       dispatch({ type: FETCH_BOARDS_SUCCESS, payload: res.data });
     })
     .catch((err) => {
@@ -68,7 +68,6 @@ export const fetchArticles = (boardId) => (dispatch) => {
   axiosWithAuth()
     .get(`/articles/from/${boardId}`)
     .then((res) => {
-      console.log(res);
       dispatch({ type: FETCH_ARTICLES_SUCCESS, payload: res.data });
     })
     .catch((err) => {
@@ -103,8 +102,9 @@ export const fetchArticle = (articleId, board_id) => (dispatch) => {
 
 export const putArticle = (articleId, content) => (dispatch) => {
   axiosWithAuth()
-    .put(`/articles/${articleId}`, content)
+    .patch(`/articles/${articleId}`, content)
     .then((res) => {
-      console.log(res);
+      console.log('updated', res);
+      dispatch({ type: PATCH_ARTICLE_SUCCESS, payload: res.data });
     });
 };

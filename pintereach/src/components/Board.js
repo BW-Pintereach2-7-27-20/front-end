@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { selectBoard } from '../actions';
-import styled from 'styled-components'; 
+import styled from 'styled-components';
 
 const StyledLink = styled(Link)`
   color: indianred;
@@ -15,10 +15,10 @@ const StyledLink = styled(Link)`
   &:hover {
     text-shadow: 2px 2px 6px brown;
   }
-`; 
+`;
 
 const StyledDescrip = styled.p`
-  font-size: 1.0rem;
+  font-size: 1rem;
   font-family: serif;
   margin-top: 1%;
   text-align: left;
@@ -27,7 +27,10 @@ const StyledDescrip = styled.p`
 const Board = ({ board }) => {
   return (
     <div className='board-wrapper'>
-      <StyledLink to={`/board/${board.id}`} onClick={() => selectBoard(board.id)}>
+      <StyledLink
+        to={`/board/${board.id}`}
+        onClick={() => selectBoard(board.id)}
+      >
         {board.name}
       </StyledLink>
       <hr />

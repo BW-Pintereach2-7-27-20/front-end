@@ -37,7 +37,16 @@ const articleReducer = (state = initialState, action) => {
       return {
         ...state,
         article: action.payload,
-        articles: [...state.articles, action.payload],
+      };
+
+    case ACTIONS.PATCH_ARTICLE_SUCCESS:
+      return {
+        ...state,
+        ...state.articles.filter((article) => {
+          if (article.id === action.payload.id) {
+            return false;
+          }
+        }),
       };
     default:
       return state;
