@@ -1,5 +1,5 @@
-import styled from './node_modules/styled-components';
-import { Link } from './node_modules/react-router-dom';
+import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 const CreateLink = styled(Link)`
   color: indianred;

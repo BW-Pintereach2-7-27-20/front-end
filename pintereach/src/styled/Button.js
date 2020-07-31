@@ -1,4 +1,4 @@
-import styled from './node_modules/styled-components';
+import styled from 'styled-components';
 
 const Button = styled.button`
   box-shadow: inset 0px 1px 0px 0px #cf866c;
