@@ -4,14 +4,21 @@ import { fetchArticles, deleteBoard } from '../actions';
 import Article from './Article';
 import Masonry from 'react-masonry-css';
 import CreateLink from '../styled/CreateLink';
+import LogoutDelBtn from '../styled/LogoutDelBtn';
+import styled from 'styled-components';
 
 import { useParams } from 'react-router-dom';
+
+const StyledWrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
 
 const Articles = (props) => {
   useEffect(() => {
     props.fetchArticles(props.match.params.id);
-  }, []);
-  useEffect(() => {}, [props.articles]);
+  }, [props.article]);
 
   const breakpointColumnsObj = {
     default: 6,
@@ -25,12 +32,16 @@ const Articles = (props) => {
     props.history.push('/dashboard');
   };
 
+  console.log(props.articles);
+
   return (
     <>
-      <CreateLink to={`/board/${props.match.params.id}/new-article`}>
-        Create new Article
-      </CreateLink>
-      <button onClick={handleDelete}>Delete Board</button>
+      <StyledWrapper>
+        <CreateLink to={`/board/${props.match.params.id}/new-article`}>
+          Create new Article
+        </CreateLink>
+        <LogoutDelBtn onClick={handleDelete}>Delete Board</LogoutDelBtn>
+      </StyledWrapper>
       <Masonry
         breakpointCols={breakpointColumnsObj}
         className='my-masonry-grid'

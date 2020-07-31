@@ -80,6 +80,7 @@ const Register = (props) => {
           Username
         </label>
         <input
+          className='usernameInpt'
           type='text'
           name='username'
           placeholder='john@doe.com'
@@ -91,6 +92,7 @@ const Register = (props) => {
           Password
         </label>
         <input
+          className='passwordInpt'
           type='password'
           name='password'
           placeholder='********'
@@ -98,7 +100,7 @@ const Register = (props) => {
           onChange={onChange}
         />
 
-        <Button disabled={disabled}>Register</Button>
+        <Button className='registerBtn' disabled={disabled}>Register</Button>
 
         {/* rendering validation errors here */}
         <div className='errors'>

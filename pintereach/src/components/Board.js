@@ -7,15 +7,21 @@ import styled from 'styled-components';
 const StyledLink = styled(Link)`
   color: indianred;
   font-size: 1.2rem;
-  font-weight: bold;
   font-family: 'Roboto Slab', serif;
-  text-shadow: 1px 1px 5px coral;
-  text-transform: capitalize;
+  font-weight: bold;
   text-decoration: none;
+  text-transform: capitalize;
 
   &:hover {
-    text-shadow: 1px 1px 5px white, 0px 0px 6px coral;
+    text-shadow: 2px 2px 6px brown;
   }
+`;
+
+const StyledDescrip = styled.p`
+  font-size: 1rem;
+  font-family: serif;
+  margin-top: 1%;
+  text-align: left;
 `;
 
 const Board = ({ board }) => {
@@ -27,7 +33,8 @@ const Board = ({ board }) => {
       >
         {board.name}
       </StyledLink>
-      <p>{board.description}</p>
+      <hr />
+      <StyledDescrip>{board.description}</StyledDescrip>
     </div>
   );
 };
