@@ -11,8 +11,8 @@ import NewArticle from './components/NewArticle.js';
 import Articles from './components/Articles.js';
 import EditArticle from './components/EditArticle.js';
 import styled from 'styled-components';
-import LogoutDelBtn from './styled/LogoutDelBtn'; 
-import Header from './styled/Header'; 
+import LogoutDelBtn from './styled/LogoutDelBtn';
+import Header from './styled/Header';
 
 const StyledNavLink = styled(NavLink)`
   color: white;
